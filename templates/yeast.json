@@ -1,0 +1,13 @@
+{
+  "amount": 1,
+  "attenuation": 81,
+  "flocculation": "Medium",
+  "form": "Dry",
+  "laboratory": "Fermentis",
+  "maxTemp": 28,
+  "minTemp": 16,
+  "name": "Safale American",
+  "productId": "US-05",
+  "type": "Ale",
+  "unit": "pkg"
+}

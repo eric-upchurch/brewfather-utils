@@ -1,0 +1,11 @@
+{
+  "_id": "default-07adb1",
+  "amount": 1,
+  "name": "Lactic Acid",
+  "time": null,
+  "timeIsDays": false,
+  "type": "Water Agent",
+  "unit": "ml",
+  "use": "Mash",
+  "waterAdjustment": true
+}

@@ -1,103 +1,13 @@
 {
   "_type": "batch",
-  "batchFermentables": [
-    {
-      "amount": 0.4536,
-      "color": 60,
-      "name": "Caramel/Crystal Malt",
-      "origin": "US",
-      "potential": 1.03404,
-      "type": "Grain"
-    },
-    {
-      "amount": 4.5359,
-      "color": 2,
-      "name": "Pale Malt 2-Row",
-      "origin": "US",
-      "potential": 1.03634,
-      "type": "Grain"
-    },
-    {
-      "amount": 0.4536,
-      "color": 1,
-      "name": "Sugar, Table (Sucrose)",
-      "potential": 1.046,
-      "potentialPercentage": 100,
-      "type": "Sugar"
-    }
-  ],
+  "batchFermentables": [],
   "batchFermentablesLocal": [],
-  "batchHops": [
-    {
-      "alpha": 6.3,
-      "amount": 56.699,
-      "name": "Cascade",
-      "origin": "US",
-      "time": 60,
-      "type": "Pellet",
-      "use": "Boil"
-    }
-  ],
+  "batchHops": [],
   "batchHopsLocal": [],
-  "batchMiscs": [
-    {
-      "_id": "default-1f88df",
-      "amount": 1,
-      "name": "Gypsum (CaSO4)",
-      "type": "Water Agent",
-      "unit": "g",
-      "use": "Mash",
-      "waterAdjustment": true
-    },
-    {
-      "_id": "default-3b1827",
-      "amount": 1,
-      "name": "Calcium Chloride (CaCl2)",
-      "type": "Water Agent",
-      "unit": "g",
-      "use": "Mash",
-      "waterAdjustment": true
-    },
-    {
-      "amount": 1,
-      "name": "Coriander Seed",
-      "time": 5,
-      "timeIsDays": false,
-      "type": "Spice",
-      "unit": "g",
-      "use": "Boil"
-    },
-    {
-      "_id": "default-aOzf3Xdj9AWQWZD9pV86qkcRSh7Rn2",
-      "_parent": "default-5adf6e",
-      "amount": 0.46,
-      "amountPerL": 0.02,
-      "name": "Supermoss HB Five Star",
-      "substitutes": "Irish Moss",
-      "time": 10,
-      "timeIsDays": false,
-      "type": "Fining",
-      "unit": "g",
-      "use": "Boil"
-    }
-  ],
+  "batchMiscs": [],
   "batchMiscsLocal": [],
   "batchNo": 1,
-  "batchYeasts": [
-    {
-      "amount": 1,
-      "attenuation": 81,
-      "flocculation": "Medium",
-      "form": "Dry",
-      "laboratory": "Fermentis",
-      "maxTemp": 28,
-      "minTemp": 16,
-      "name": "Safale American",
-      "productId": "US-05",
-      "type": "Ale",
-      "unit": "pkg"
-    }
-  ],
+  "batchYeasts": [],
   "batchYeastsLocal": [],
   "boilSteps": [],
   "boilStepsCount": 0,
@@ -217,34 +127,8 @@
     "carbonation": 2.4,
     "color": 10.6,
     "data": {
-      "mashFermentables": [
-        {
-          "amount": 0.4536,
-          "color": 60,
-          "name": "Caramel/Crystal Malt",
-          "origin": "US",
-          "potential": 1.03404,
-          "type": "Grain"
-        },
-        {
-          "amount": 4.5359,
-          "color": 2,
-          "name": "Pale Malt 2-Row",
-          "origin": "US",
-          "potential": 1.03634,
-          "type": "Grain"
-        }
-      ],
-      "otherFermentables": [
-        {
-          "amount": 0.4536,
-          "color": 1,
-          "name": "Sugar, Table (Sucrose)",
-          "potential": 1.046,
-          "potentialPercentage": 100,
-          "type": "Sugar"
-        }
-      ]
+      "mashFermentables": [],
+      "otherFermentables": []
     },
     "defaults": {
       "abv": "simple",
@@ -317,32 +201,7 @@
       "waterCalculation": "No Sparge",
       "waterGrainRatio": 3
     },
-    "fermentables": [
-      {
-        "amount": 0.4536,
-        "color": 60,
-        "name": "Caramel/Crystal Malt",
-        "origin": "US",
-        "potential": 1.03404,
-        "type": "Grain"
-      },
-      {
-        "amount": 4.5359,
-        "color": 2,
-        "name": "Pale Malt 2-Row",
-        "origin": "US",
-        "potential": 1.03634,
-        "type": "Grain"
-      },
-      {
-        "amount": 0.4536,
-        "color": 1,
-        "name": "Sugar, Table (Sucrose)",
-        "potential": 1.046,
-        "potentialPercentage": 100,
-        "type": "Sugar"
-      }
-    ],
+    "fermentables": [],
     "fermentation": {
       "_id": "default",
       "name": "Ale",
@@ -358,31 +217,7 @@
     "fgEstimated": 1.008,
     "fgFormula": "normal",
     "hopStandMinutes": 0,
-    "hops": [
-      {
-        "alpha": 6.3,
-        "amount": 28.349523,
-        "ibu": 13.5,
-        "name": "Cascade",
-        "origin": "US",
-        "time": 60,
-        "type": "Pellet",
-        "use": "Boil"
-      },
-      {
-        "actualTime": 1632228866440,
-        "alpha": 6.3,
-        "amount": 28.349523,
-        "day": 7,
-        "ibu": 0,
-        "name": "Cascade",
-        "origin": "US",
-        "time": 7,
-        "timeUnit": "days",
-        "type": "Pellet",
-        "use": "Dry Hop"
-      }
-    ],
+    "hops": [],
     "ibu": 18,
     "ibuFormula": "tinseth",
     "mash": {
@@ -407,48 +242,7 @@
         }
       ]
     },
-    "miscs": [
-      {
-        "_id": "default-1f88df",
-        "amount": 1,
-        "name": "Gypsum (CaSO4)",
-        "type": "Water Agent",
-        "unit": "g",
-        "use": "Mash",
-        "waterAdjustment": true
-      },
-      {
-        "_id": "default-3b1827",
-        "amount": 1,
-        "name": "Calcium Chloride (CaCl2)",
-        "type": "Water Agent",
-        "unit": "g",
-        "use": "Mash",
-        "waterAdjustment": true
-      },
-      {
-        "amount": 1,
-        "name": "Coriander Seed",
-        "time": 5,
-        "timeIsDays": false,
-        "type": "Spice",
-        "unit": "g",
-        "use": "Boil"
-      },
-      {
-        "_id": "default-aOzf3Xdj9AWQWZD9pV86qkcRSh7Rn2",
-        "_parent": "default-5adf6e",
-        "amount": 0.46,
-        "amountPerL": 0.02,
-        "name": "Supermoss HB Five Star",
-        "substitutes": "Irish Moss",
-        "time": 10,
-        "timeIsDays": false,
-        "type": "Fining",
-        "unit": "g",
-        "use": "Boil"
-      }
-    ],
+    "miscs": [],
     "name": "TEST RECIPE",
     "nutrition": {
       "calories": {
@@ -468,21 +262,7 @@
     "searchTags": [],
     "totalGravity": 1.06018226,
     "type": "All Grain",
-    "yeasts": [
-      {
-        "amount": 1,
-        "attenuation": 81,
-        "flocculation": "Medium",
-        "form": "Dry",
-        "laboratory": "Fermentis",
-        "maxTemp": 28,
-        "minTemp": 16,
-        "name": "Safale American",
-        "productId": "US-05",
-        "type": "Ale",
-        "unit": "pkg"
-      }
-    ]
+    "yeasts": []
   },
   "status": "Completed"
 }

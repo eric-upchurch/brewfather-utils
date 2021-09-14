@@ -1,0 +1,9 @@
+{
+  "amount": 1,
+  "name": "ADDITION",
+  "time": 5,
+  "timeIsDays": false,
+  "type": "Spice",
+  "unit": "g",
+  "use": "Boil"
+}

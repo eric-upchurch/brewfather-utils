@@ -1,0 +1,9 @@
+{
+  "_id": "default-1f88df",
+  "amount": 1,
+  "name": "Gypsum (CaSO4)",
+  "type": "Water Agent",
+  "unit": "g",
+  "use": "Mash",
+  "waterAdjustment": true
+}
