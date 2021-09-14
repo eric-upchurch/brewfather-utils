@@ -1,0 +1,241 @@
+{
+  "batchBrewDate": "2021-04-25",
+  "batchEstServeDate": "2021-05-30",
+  "batchName": "Continuum Pale Ale",
+  "batchType": "All Grain",
+  "batchStyle": "American Pale Ale",
+  "batchPreBoilOG": 1.041033,
+  "batchColor": 8.054386,
+  "batchEstABV": 5.483127,
+  "batchActABV": 6.157007,
+  "batchEstOG": 1.054359,
+  "batchActOG": 1.05900001525879,
+  "batchEstFG": 1.012503,
+  "batchActFG": 1.01199996471405,
+  "batchEstIBU": 35.41278,
+  "batchSize": 5.5,
+  "batchEfficiency": 75,
+  "batchBoilTime": 60,
+  "batchBoilSize": 7.617347,
+  "batchEstCalories": 177.1049,
+  "batchACActABV": 1,
+  "batchACEstABV": 1,
+  "batchACEstIBU": 1,
+  "batchACEstOG": 1,
+  "batchACEstFG": 1,
+  "batchACPreOG": 1,
+  "batchPostBoilOG": 1,
+  "batchACCalories": 1,
+  "batchIBUCalcMethod": 2,
+  "batchACBoilSize": 1,
+  "batchStage": "Primary",
+  "batchInShoppingCart": false,
+  "batchTakenFromInv": false,
+  "batchFolder": "Pers.",
+  "batchNotes": "From BYO Classic Clones.\n\nFirst taste nice, but Not bitter enough... used old Magnum. Should have used a bit more.  Also threw in some very compacted dry hops from the Heady clone that were almost nearly still pelletized whe I took them out - put them in at flameout.",
+  "batchHops": [
+    {
+      "bhName": "Magnum",
+      "bhBoilTime": 60,
+      "bhHopOrigin": "Germany",
+      "bhUnit": 1,
+      "bhHopType": "Bittering",
+      "bhBeta": 6.5,
+      "bhHopTypeId": 1,
+      "bhHSI": 15,
+      "bhHopForm": "Pellet",
+      "bhAlpha": 10,
+      "bhAmount": 1,
+      "bhRowOrder": 1,
+      "bhHopUse": "Boil"
+    },
+    {
+      "bhName": "Cascade",
+      "bhBoilTime": 15,
+      "bhHopOrigin": "US",
+      "bhUnit": 1,
+      "bhHopType": "Aroma\/Bittering",
+      "bhBeta": 6,
+      "bhHopTypeId": 1,
+      "bhHSI": 50,
+      "bhHopForm": "Pellet",
+      "bhAlpha": 4,
+      "bhAmount": 1,
+      "bhRowOrder": 2,
+      "bhHopUse": "Boil"
+    },
+    {
+      "bhName": "Cascade",
+      "bhHopOrigin": "US",
+      "bhUnit": 1,
+      "bhHopType": "Aroma\/Bittering",
+      "bhBeta": 6,
+      "bhHopTypeId": 1,
+      "bhHSI": 50,
+      "bhHopForm": "Pellet",
+      "bhAlpha": 5.4,
+      "bhAmount": 1.5,
+      "bhRowOrder": 3,
+      "bhHopUse": "Boil"
+    }
+  ],
+  "batchExtras": [
+    {
+      "beTime": 15,
+      "beAmount": 1,
+      "beName": "Whirlfloc Tablet"
+    },
+    {
+      "beTime": 10,
+      "beAmount": 0.5,
+      "beName": "Yeast Nutrient"
+    },
+    {
+      "beName": "Gypsum",
+      "beRowOrder": 3,
+      "beTime": 60,
+      "beAmount": 4
+    },
+    {
+      "beName": "Calcium Chloride",
+      "beRowOrder": 4,
+      "beTime": 60,
+      "beAmount": 2
+    },
+    {
+      "beName": "Lactic Acid",
+      "beRowOrder": 5,
+      "beTime": 60,
+      "beAmount": 4
+    }
+  ],
+  "batchCarbs": [
+    {
+      "bcPSIRequired": 30.4,
+      "bcSugarRequired": 5.23,
+      "bcCO2Volume": 2.6,
+      "bcCarbName": "Bottle Carbonation",
+      "bcCarbType": "Bottle",
+      "bcBeerVolume": 5.5,
+      "bcResidualCO2": 0.83,
+      "bcBeerTemp": 70,
+      "bcPrimingType": "Corn Sugar"
+    }
+  ],
+  "batchProfiles": [
+    {
+      "bpName": "Medium Body Infusion, Mash Out",
+      "eqProfile": {
+        "eqWortShrinkage": 2,
+        "eqProfileName": "All Grain BIAB",
+        "eqGrainTemp": 70,
+        "eqBoiloffPercentOrAmount": 1,
+        "eqBoiloffAmount": 1.75,
+        "eqGrainAbsorption": 0.04,
+        "eqKettleLoss": 0.25
+      },
+      "bpSpargeWaterTemp": 526.9811,
+      "bpSpargeType": 2
+    }
+  ],
+  "batchYeasts": [
+    {
+      "byName": "Safale US-05",
+      "byYeastFloc": "Medium",
+      "byMaxTemp": 75,
+      "byAmount": 1,
+      "byYeastForm": "Dry",
+      "byYeastLab": "Fermentis",
+      "byAttenuation": 77,
+      "byAmountUOM": 3,
+      "byMinTemp": 59,
+      "byLabID": "US-05",
+      "byYeastType": "Ale"
+    }
+  ],
+  "batchGrains": [
+    {
+      "bgBaseMaltType": "Base - 2 Row",
+      "bgName": "Pale Malt (2 Row) US",
+      "bgSG": 1.036,
+      "bgBoilTime": 60,
+      "bgBaseMaltPH": 5.7,
+      "bgGrainOrigin": "US",
+      "bgColor": 2,
+      "bgAmount": 160,
+      "bgGrainType": "Grain"
+    },
+    {
+      "bgBaseMaltType": "Base - 2 Row",
+      "bgGrainType": "Grain",
+      "bgName": "Vienna Malt",
+      "bgBoilTime": 60,
+      "bgRowOrder": 1,
+      "bgSG": 1.036,
+      "bgBaseMaltPH": 5.7,
+      "bgGrainOrigin": "Germany",
+      "bgColor": 3.5,
+      "bgCostPerOz": 1.5,
+      "bgAmount": 8
+    },
+    {
+      "bgBaseMaltType": "Base - Munich",
+      "bgName": "Munich Malt - 10L",
+      "bgRowOrder": 2,
+      "bgBoilTime": 60,
+      "bgSG": 1.035,
+      "bgBaseMaltPH": 5.43,
+      "bgGrainOrigin": "US",
+      "bgColor": 10,
+      "bgAmount": 8,
+      "bgGrainType": "Grain"
+    },
+    {
+      "bgBaseMaltType": "Base - 2 Row",
+      "bgName": "Caramel\/Crystal Malt - 60L",
+      "bgRowOrder": 3,
+      "bgBoilTime": 60,
+      "bgSG": 1.034,
+      "bgBaseMaltPH": 5.7,
+      "bgGrainOrigin": "US",
+      "bgColor": 60,
+      "bgAmount": 10,
+      "bgGrainType": "Grain"
+    }
+  ],
+  "batchSteps": [
+    {
+      "bsName": "Infusion",
+      "bsTime": 60,
+      "bsWaterToAdd": 33,
+      "bsStepTemp": 152,
+      "bsRatioToAdd": 2.83871,
+      "bsInfusionTemp": 157.7773,
+      "bsRowOrder": 1,
+      "bsFreeOrAuto": 1
+    },
+    {
+      "bsName": "Mash Out",
+      "bsType": 2,
+      "bsStepTemp": 168,
+      "bsFreeOrAuto": 1,
+      "bsRowOrder": 2
+    }
+  ],
+  "batchFerms": [
+    {
+      "bfEstDate": "2021-04-25",
+      "bfName": "Primary",
+      "bfTemp": 68,
+      "bfDays": 21,
+      "bfActDate": "2021-04-25"
+    },
+    {
+      "bfEstDate": "2021-05-16",
+      "bfRowOrder": 1,
+      "bfTemp": 70,
+      "bfDays": 14,
+      "bfName": "Bottle\/Keg"
+    }
+  ]
+}

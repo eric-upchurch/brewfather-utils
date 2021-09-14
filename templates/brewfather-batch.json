@@ -1,0 +1,745 @@
+{
+  "_type": "batch",
+  "batchFermentables": [
+    {
+      "amount": 0.4536,
+      "color": 60,
+      "name": "Caramel/Crystal Malt",
+      "origin": "US",
+      "potential": 1.03404,
+      "type": "Grain"
+    },
+    {
+      "amount": 4.5359,
+      "color": 2,
+      "name": "Pale Malt 2-Row",
+      "origin": "US",
+      "potential": 1.03634,
+      "type": "Grain"
+    },
+    {
+      "amount": 0.4536,
+      "color": 1,
+      "name": "Sugar, Table (Sucrose)",
+      "potential": 1.046,
+      "potentialPercentage": 100,
+      "type": "Sugar"
+    }
+  ],
+  "batchFermentablesLocal": [],
+  "batchHops": [
+    {
+      "alpha": 6.3,
+      "amount": 56.699,
+      "name": "Cascade",
+      "origin": "US",
+      "time": 60,
+      "type": "Pellet",
+      "use": "Boil"
+    }
+  ],
+  "batchHopsLocal": [],
+  "batchMiscs": [
+    {
+      "_id": "default-1f88df",
+      "amount": 1,
+      "name": "Gypsum (CaSO4)",
+      "type": "Water Agent",
+      "unit": "g",
+      "use": "Mash",
+      "waterAdjustment": true
+    },
+    {
+      "_id": "default-3b1827",
+      "amount": 1,
+      "name": "Calcium Chloride (CaCl2)",
+      "type": "Water Agent",
+      "unit": "g",
+      "use": "Mash",
+      "waterAdjustment": true
+    },
+    {
+      "amount": 1,
+      "name": "Coriander Seed",
+      "time": 5,
+      "timeIsDays": false,
+      "type": "Spice",
+      "unit": "g",
+      "use": "Boil"
+    },
+    {
+      "_id": "default-aOzf3Xdj9AWQWZD9pV86qkcRSh7Rn2",
+      "_parent": "default-5adf6e",
+      "amount": 0.46,
+      "amountPerL": 0.02,
+      "name": "Supermoss HB Five Star",
+      "substitutes": "Irish Moss",
+      "time": 10,
+      "timeIsDays": false,
+      "type": "Fining",
+      "unit": "g",
+      "use": "Boil"
+    }
+  ],
+  "batchMiscsLocal": [],
+  "batchNo": 1,
+  "batchYeasts": [
+    {
+      "amount": 1,
+      "attenuation": 81,
+      "flocculation": "Medium",
+      "form": "Dry",
+      "laboratory": "Fermentis",
+      "maxTemp": 28,
+      "minTemp": 16,
+      "name": "Safale American",
+      "productId": "US-05",
+      "type": "Ale",
+      "unit": "pkg"
+    }
+  ],
+  "batchYeastsLocal": [],
+  "boilSteps": [],
+  "boilStepsCount": 0,
+  "bottlingDate": 1631624134234,
+  "bottlingDateSet": true,
+  "brewControllerEnabled": false,
+  "brewDate": 1631624066440,
+  "brewer": "Eric Upchurch",
+  "carbonationForce": 10.8,
+  "carbonationType": "Keg (Force)",
+  "cost": {
+    "fermentables": 0,
+    "fermentablesShare": 0,
+    "hops": 0,
+    "hopsShare": 0,
+    "miscs": 0,
+    "miscsShare": 0,
+    "perBottlingLiter": 0,
+    "total": 0,
+    "yeasts": 0,
+    "yeastsShare": 0
+  },
+  "devices": {
+    "brewPiLess": {
+      "enabled": true,
+      "items": []
+    },
+    "floatHydrometer": {
+      "enabled": true,
+      "items": []
+    },
+    "floatyHydrometer": {
+      "enabled": true,
+      "items": []
+    },
+    "gfcc": {
+      "brewDeviceId": null,
+      "enabled": false,
+      "items": []
+    },
+    "iSpindel": {
+      "enabled": true,
+      "items": []
+    },
+    "myBrewbot": {
+      "enabled": true,
+      "items": []
+    },
+    "plaatoAirlock": {
+      "enabled": true,
+      "items": []
+    },
+    "plaatoKeg": {
+      "enabled": true,
+      "items": []
+    },
+    "smartPid": {
+      "brewDeviceId": null,
+      "enabled": false,
+      "items": []
+    },
+    "stream": {
+      "enabled": true,
+      "items": []
+    },
+    "tilt": {
+      "enabled": true,
+      "gravity": true,
+      "items": [],
+      "mode": "default",
+      "temp": true
+    }
+  },
+  "estimatedColor": 10.6,
+  "estimatedFg": 1.01,
+  "estimatedIbu": 14,
+  "estimatedOg": 1.06,
+  "fermentationControllerEnabled": false,
+  "fermentationStartDate": 1631624066440,
+  "hidden": false,
+  "mashStepsCount": 2,
+  "measuredAbv": 6.6,
+  "measuredConversionEfficiency": null,
+  "measuredEfficiency": 72,
+  "measuredFg": 1.01,
+  "measuredOg": 1.06,
+  "measurements": [],
+  "name": "TEST BATCH",
+  "notes": [
+    {
+      "note": "",
+      "status": "Completed",
+      "timestamp": 1631624133867,
+      "type": "statusChanged"
+    },
+    {
+      "note": "",
+      "status": "Fermenting",
+      "timestamp": 1631624103998,
+      "type": "statusChanged"
+    },
+    {
+      "note": "",
+      "status": "Brewing",
+      "timestamp": 1631624081324,
+      "type": "statusChanged"
+    }
+  ],
+  "recipe": {
+    "_type": "recipe",
+    "abv": 6.83,
+    "author": "Eric Upchurch",
+    "avgWeightedHopstandTemp": 80,
+    "batchSize": 20.819765,
+    "boilSize": 29.49,
+    "boilTime": 60,
+    "carbonation": 2.4,
+    "color": 10.6,
+    "data": {
+      "mashFermentables": [
+        {
+          "amount": 0.4536,
+          "color": 60,
+          "name": "Caramel/Crystal Malt",
+          "origin": "US",
+          "potential": 1.03404,
+          "type": "Grain"
+        },
+        {
+          "amount": 4.5359,
+          "color": 2,
+          "name": "Pale Malt 2-Row",
+          "origin": "US",
+          "potential": 1.03634,
+          "type": "Grain"
+        }
+      ],
+      "otherFermentables": [
+        {
+          "amount": 0.4536,
+          "color": 1,
+          "name": "Sugar, Table (Sucrose)",
+          "potential": 1.046,
+          "potentialPercentage": 100,
+          "type": "Sugar"
+        }
+      ]
+    },
+    "defaults": {
+      "abv": "simple",
+      "altitude": "ft",
+      "attenuation": "normal",
+      "carbonation": "vol",
+      "color": "srm",
+      "grainColor": "lovibond",
+      "gravity": "sg",
+      "hop": "oz",
+      "ibu": "tinseth",
+      "preferred": "us",
+      "pressure": "psi",
+      "temp": "f",
+      "volume": "gal",
+      "weight": "lb"
+    },
+    "efficiency": 72,
+    "equipment": {
+      "_created": {
+        "nanoseconds": 829000000,
+        "seconds": 1625005449
+      },
+      "_id": "dBzh0cSgBSqbmk4d3HVEzuievzWTag",
+      "_meta": {
+        "efficiencyIsCalculated": true,
+        "mashEfficiencyIsCalculated": true
+      },
+      "_timestamp": {
+        "nanoseconds": 787000000,
+        "seconds": 1625413915
+      },
+      "_timestamp_ms": 1625413915787,
+      "_version": "2.7.6",
+      "altitude": 2194.559997,
+      "altitudeAdjustment": true,
+      "aromaHopUtilization": 0.23,
+      "batchSize": 20.819765,
+      "boilOffPerHr": 6.624471,
+      "boilSize": 29.49,
+      "boilTemp": 92.722222,
+      "boilTime": 60,
+      "bottlingVolume": 18.93,
+      "brewhouseEfficiency": 74.3,
+      "calcAromaHopUtilization": true,
+      "calcBoilVolume": true,
+      "calcMashEfficiency": true,
+      "efficiency": 72,
+      "efficiencyType": "Fermenter",
+      "evaporationRate": 0.22463448626653104,
+      "fermenterLoss": 1.892706,
+      "fermenterLossEstimate": 0,
+      "fermenterVolume": 20.819765,
+      "fermenterVolumeBeforeTopUp": 20.819765,
+      "grainAbsorptionRate": 0.417,
+      "hidden": false,
+      "hopUtilization": 1,
+      "hopstandTemperature": 80,
+      "mashEfficiency": 75.9,
+      "mashTunDeadSpace": 11.356235,
+      "mashTunLoss": null,
+      "mashWaterFormula": "BoilVolumeColdL + (GrainAmountKg * GrainAbsorptionRate) + MashTunLossL",
+      "mashWaterMax": 55.002033,
+      "mashWaterVolumeLimitEnabled": true,
+      "name": "Continuum BrewZilla / RoboBrew 65L",
+      "postBoilKettleVol": 22.870196875,
+      "spargeWaterFormula": "0",
+      "spargeWaterOverflow": "Top-Up",
+      "trubChillerLoss": 1.135624,
+      "waterCalculation": "No Sparge",
+      "waterGrainRatio": 3
+    },
+    "fermentables": [
+      {
+        "amount": 0.4536,
+        "color": 60,
+        "name": "Caramel/Crystal Malt",
+        "origin": "US",
+        "potential": 1.03404,
+        "type": "Grain"
+      },
+      {
+        "amount": 4.5359,
+        "color": 2,
+        "name": "Pale Malt 2-Row",
+        "origin": "US",
+        "potential": 1.03634,
+        "type": "Grain"
+      },
+      {
+        "amount": 0.4536,
+        "color": 1,
+        "name": "Sugar, Table (Sucrose)",
+        "potential": 1.046,
+        "potentialPercentage": 100,
+        "type": "Sugar"
+      }
+    ],
+    "fermentation": {
+      "_id": "default",
+      "name": "Ale",
+      "steps": [
+        {
+          "actualTime": 1631624066440,
+          "stepTemp": 20,
+          "stepTime": 14,
+          "type": "Primary"
+        }
+      ]
+    },
+    "fgEstimated": 1.008,
+    "fgFormula": "normal",
+    "hopStandMinutes": 0,
+    "hops": [
+      {
+        "alpha": 6.3,
+        "amount": 28.349523,
+        "ibu": 13.5,
+        "name": "Cascade",
+        "origin": "US",
+        "time": 60,
+        "type": "Pellet",
+        "use": "Boil"
+      },
+      {
+        "actualTime": 1632228866440,
+        "alpha": 6.3,
+        "amount": 28.349523,
+        "day": 7,
+        "ibu": 0,
+        "name": "Cascade",
+        "origin": "US",
+        "time": 7,
+        "timeUnit": "days",
+        "type": "Pellet",
+        "use": "Dry Hop"
+      }
+    ],
+    "ibu": 18,
+    "ibuFormula": "tinseth",
+    "mash": {
+      "_id": "default-hf-mo",
+      "name": "High fermentability plus mash out",
+      "steps": [
+        {
+          "displayStepTemp": 152,
+          "name": "",
+          "rampTime": null,
+          "stepTemp": 66.666667,
+          "stepTime": 60,
+          "type": "Temperature"
+        },
+        {
+          "displayStepTemp": 167,
+          "name": "Mash Out",
+          "rampTime": null,
+          "stepTemp": 75,
+          "stepTime": 10,
+          "type": "Temperature"
+        }
+      ]
+    },
+    "miscs": [
+      {
+        "_id": "default-1f88df",
+        "amount": 1,
+        "name": "Gypsum (CaSO4)",
+        "type": "Water Agent",
+        "unit": "g",
+        "use": "Mash",
+        "waterAdjustment": true
+      },
+      {
+        "_id": "default-3b1827",
+        "amount": 1,
+        "name": "Calcium Chloride (CaCl2)",
+        "type": "Water Agent",
+        "unit": "g",
+        "use": "Mash",
+        "waterAdjustment": true
+      },
+      {
+        "amount": 1,
+        "name": "Coriander Seed",
+        "time": 5,
+        "timeIsDays": false,
+        "type": "Spice",
+        "unit": "g",
+        "use": "Boil"
+      },
+      {
+        "_id": "default-aOzf3Xdj9AWQWZD9pV86qkcRSh7Rn2",
+        "_parent": "default-5adf6e",
+        "amount": 0.46,
+        "amountPerL": 0.02,
+        "name": "Supermoss HB Five Star",
+        "substitutes": "Irish Moss",
+        "time": 10,
+        "timeIsDays": false,
+        "type": "Fining",
+        "unit": "g",
+        "use": "Boil"
+      }
+    ],
+    "name": "TEST RECIPE",
+    "nutrition": {
+      "calories": {
+        "alcohol": 39.00706510469904,
+        "carbs": 17.176521231230915,
+        "kJ": 235.07212522953097,
+        "total": 56.18358633592996
+      },
+      "carbs": {
+        "total": 4.290596951657402
+      }
+    },
+    "og": 1.06018226,
+    "postBoilGravity": 1.06018226,
+    "preBoilGravity": 1.04,
+    "primaryTemp": 20,
+    "searchTags": [],
+    "totalGravity": 1.06018226,
+    "type": "All Grain",
+    "water": {
+      "acidPhAdjustment": 0,
+      "diluted": null,
+      "dilutionPercentage": null,
+      "enableSpargeAdjustments": true,
+      "mash": {
+        "_created": {
+          "nanoseconds": 414000000,
+          "seconds": 1628970381
+        },
+        "_id": "default-ro",
+        "_timestamp": {
+          "nanoseconds": 291000000,
+          "seconds": 1628970442
+        },
+        "_timestamp_ms": 1628970442291,
+        "_version": "2.7.6",
+        "alkalinity": 13.1114,
+        "anions": 0.396,
+        "bicarbonate": 16,
+        "bicarbonateMeqL": 0.2622263012980202,
+        "calcium": 1,
+        "cations": 0.398,
+        "chloride": 4,
+        "hardness": 2,
+        "hidden": false,
+        "ionBalance": 0,
+        "ionBalanceOff": false,
+        "magnesium": 0,
+        "name": "Reverse Osmosis Water",
+        "ph": 7,
+        "residualAlkalinity": 12.3971,
+        "residualAlkalinityMeqLCalc": 0.2444,
+        "soClRatio": 0.25,
+        "sodium": 8,
+        "sulfate": 1,
+        "type": "source"
+      },
+      "mashAdjustments": {
+        "acids": [
+          {
+            "alkalinityMeqL": 0,
+            "amount": 0,
+            "concentration": 88,
+            "type": "lactic"
+          }
+        ],
+        "bicarbonate": 0,
+        "calcium": 0,
+        "calciumCarbonate": 0,
+        "calciumChloride": null,
+        "calciumHydroxide": null,
+        "calciumSulfate": null,
+        "chloride": 0,
+        "ltAMS": 0,
+        "ltDWB": 0,
+        "magnesium": 0,
+        "magnesiumChloride": 0,
+        "magnesiumSulfate": null,
+        "sodium": 0,
+        "sodiumBicarbonate": null,
+        "sodiumChloride": 0,
+        "sodiumMetabisulfite": 0,
+        "sodiumMetabisulfitePPM": 0,
+        "sulfate": 0,
+        "volume": 30.39
+      },
+      "mashPh": 5.62,
+      "mashPhDistilled": 5.59,
+      "mashTargetDiff": null,
+      "mashWaterAmount": null,
+      "meta": {
+        "equalSourceTotal": true
+      },
+      "settings": {
+        "adjustSparge": true,
+        "calciumChloride": {
+          "auto": true,
+          "form": "anhydrous",
+          "mash": true,
+          "sparge": true
+        },
+        "calciumHydroxide": {
+          "auto": false,
+          "mash": true,
+          "sparge": false
+        },
+        "calciumSulfate": {
+          "auto": true,
+          "mash": true,
+          "sparge": true
+        },
+        "magnesiumSulfate": {
+          "auto": true,
+          "mash": true,
+          "sparge": true
+        },
+        "sodiumBicarbonate": {
+          "auto": false,
+          "mash": true,
+          "sparge": false
+        }
+      },
+      "source": {
+        "_created": {
+          "nanoseconds": 414000000,
+          "seconds": 1628970381
+        },
+        "_id": "default-ro",
+        "_timestamp": {
+          "nanoseconds": 291000000,
+          "seconds": 1628970442
+        },
+        "_timestamp_ms": 1628970442291,
+        "_version": "2.7.6",
+        "alkalinity": 13.1114,
+        "anions": 0.396,
+        "bicarbonate": 16,
+        "bicarbonateMeqL": 0.2622263012980202,
+        "calcium": 1,
+        "cations": 0.398,
+        "chloride": 4,
+        "hardness": 2,
+        "hidden": false,
+        "ionBalance": 0,
+        "ionBalanceOff": false,
+        "magnesium": 0,
+        "name": "Reverse Osmosis Water",
+        "ph": 7,
+        "residualAlkalinity": 12.3971,
+        "residualAlkalinityMeqLCalc": 0.2444,
+        "soClRatio": 0.25,
+        "sodium": 8,
+        "sulfate": 1,
+        "type": "source"
+      },
+      "sourceTargetDiff": null,
+      "sparge": {
+        "_created": {
+          "nanoseconds": 414000000,
+          "seconds": 1628970381
+        },
+        "_id": "default-ro",
+        "_timestamp": {
+          "nanoseconds": 291000000,
+          "seconds": 1628970442
+        },
+        "_timestamp_ms": 1628970442291,
+        "_version": "2.7.6",
+        "alkalinity": 13.1114,
+        "anions": 0.396,
+        "bicarbonate": 16,
+        "bicarbonateMeqL": 0.2622263012980202,
+        "calcium": 1,
+        "cations": 0.398,
+        "chloride": 4,
+        "hardness": 2,
+        "hidden": false,
+        "ionBalance": 0,
+        "ionBalanceOff": false,
+        "magnesium": 0,
+        "name": "Reverse Osmosis Water",
+        "ph": 7,
+        "residualAlkalinity": 12.3971,
+        "residualAlkalinityMeqLCalc": 0.2444,
+        "soClRatio": 0.25,
+        "sodium": 8,
+        "sulfate": 1,
+        "type": "source"
+      },
+      "spargeAcidPhAdjustment": 0,
+      "spargeAdjustments": {
+        "acids": [
+          {
+            "amount": 0,
+            "concentration": 88,
+            "type": "lactic"
+          }
+        ],
+        "bicarbonate": 0,
+        "calcium": 0,
+        "calciumCarbonate": 0,
+        "calciumChloride": 0,
+        "calciumHydroxide": 0,
+        "calciumSulfate": 0,
+        "chloride": 0,
+        "ltAMS": 0,
+        "ltDWB": 0,
+        "magnesium": 0,
+        "magnesiumChloride": 0,
+        "magnesiumSulfate": 0,
+        "sodium": 0,
+        "sodiumBicarbonate": 0,
+        "sodiumChloride": 0,
+        "sodiumMetabisulfite": 0,
+        "sodiumMetabisulfitePPM": 0,
+        "sulfate": 0,
+        "volume": 0
+      },
+      "spargeTargetDiff": null,
+      "spargeWaterAmount": null,
+      "total": {
+        "_created": {
+          "nanoseconds": 414000000,
+          "seconds": 1628970381
+        },
+        "_id": "default-ro",
+        "_timestamp": {
+          "nanoseconds": 291000000,
+          "seconds": 1628970442
+        },
+        "_timestamp_ms": 1628970442291,
+        "_version": "2.7.6",
+        "alkalinity": 13.1114,
+        "anions": 0.396,
+        "bicarbonate": 16,
+        "bicarbonateMeqL": 0.2622263012980202,
+        "calcium": 1,
+        "cations": 0.398,
+        "chloride": 4,
+        "hardness": 2,
+        "hidden": false,
+        "ionBalance": 0,
+        "ionBalanceOff": false,
+        "magnesium": 0,
+        "name": "Reverse Osmosis Water",
+        "ph": 7,
+        "residualAlkalinity": 12.3971,
+        "residualAlkalinityMeqLCalc": 0.2444,
+        "soClRatio": 0.25,
+        "sodium": 8,
+        "sulfate": 1,
+        "type": "source"
+      },
+      "totalAdjustments": {
+        "bicarbonate": 0,
+        "calcium": 0,
+        "calciumCarbonate": 0,
+        "calciumChloride": 0,
+        "calciumHydroxide": 0,
+        "calciumSulfate": 0,
+        "chloride": 0,
+        "ltAMS": 0,
+        "ltDWB": 0,
+        "magnesium": 0,
+        "magnesiumChloride": 0,
+        "magnesiumSulfate": 0,
+        "sodium": 0,
+        "sodiumBicarbonate": 0,
+        "sodiumChloride": 0,
+        "sodiumMetabisulfite": 0,
+        "sodiumMetabisulfitePPM": 0,
+        "sulfate": 0,
+        "volume": 30.39
+      },
+      "totalTargetDiff": null
+    },
+    "yeasts": [
+      {
+        "amount": 1,
+        "attenuation": 81,
+        "flocculation": "Medium",
+        "form": "Dry",
+        "laboratory": "Fermentis",
+        "maxTemp": 28,
+        "minTemp": 16,
+        "name": "Safale American",
+        "productId": "US-05",
+        "type": "Ale",
+        "unit": "pkg"
+      }
+    ]
+  },
+  "status": "Completed"
+}
