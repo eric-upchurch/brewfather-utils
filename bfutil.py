@@ -205,6 +205,9 @@ class BFUtil:
         for fermentable in i_brew["batchGrains"]:
             self.add_fermentable(bf, fermentable)
 
+        for yeast in i_brew["batchYeasts"]:
+            self.add_yeast(bf, yeast)
+
         self.batch_number += 1
         return bf
 
@@ -225,7 +228,7 @@ class BFUtil:
     def add_fermentable(self, bf, fermentable):
         bf_ferm = copy.deepcopy(BFUtil.OBJ_FERM)
 
-        the_type = grain_type(get_value(fermentable, "bgGrainType", "Sugar"))
+        the_type = grain_type(get_value(fermentable, "bgGrainType", "Sugar")) # don't know, assume Sugar
         bf_ferm["amount"] = oz_to_kg(get_value(fermentable, "bgAmount", 0))
         bf_ferm["color"] = get_value(fermentable, "bgColor", 0)
         bf_ferm["name"] = fermentable["bgName"]
@@ -242,6 +245,23 @@ class BFUtil:
             bf["recipe"]["data"]["otherFermentables"].append(bf_ferm)
         else:
             bf["recipe"]["data"]["mashFermentables"].append(bf_ferm)
+
+    def add_yeast(self, bf, yeast):
+        bf_yeast = copy.deepcopy(BFUtil.OBJ_YEAST)
+
+        bf_yeast["amount"] = 1  # just use package/vial instead of billion cells
+        bf_yeast["attenuation"] = yeast["byAttenuation"]
+        bf_yeast["flocculation"] = yeast["byYeastFloc"]
+        bf_yeast["form"] = yeast["byYeastForm"]
+        bf_yeast["laboratory"] = get_value(yeast, "byYeastLab", "Unknown")
+        bf_yeast["maxTemp"] = f_to_c(yeast["byMaxTemp"])
+        bf_yeast["minTemp"] = f_to_c(yeast["byMinTemp"])
+        bf_yeast["name"] = yeast["byName"]
+        bf_yeast["productId"] = get_value(yeast, "byLabID", "Unknown")
+        bf_yeast["type"] = yeast["byYeastType"]
+
+        bf["batchYeasts"].append(bf_yeast)
+        bf["recipe"]["yeasts"].append(bf_yeast)
 
 
 def main():
