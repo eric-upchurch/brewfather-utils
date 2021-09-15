@@ -95,7 +95,7 @@
   "measuredFg": 1.01,
   "measuredOg": 1.06,
   "measurements": [],
-  "name": "TEST BATCH",
+  "name": "Batch",
   "notes": [
     {
       "note": "",
@@ -244,17 +244,6 @@
     },
     "miscs": [],
     "name": "TEST RECIPE",
-    "nutrition": {
-      "calories": {
-        "alcohol": 39.00706510469904,
-        "carbs": 17.176521231230915,
-        "kJ": 235.07212522953097,
-        "total": 56.18358633592996
-      },
-      "carbs": {
-        "total": 4.290596951657402
-      }
-    },
     "og": 1.06018226,
     "postBoilGravity": 1.06018226,
     "preBoilGravity": 1.04,
