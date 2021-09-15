@@ -39,9 +39,8 @@ def gal_to_l(gallons):
 
 def get_by_entry(array, key, value, key_to_get):
     for obj in array:
-        if key in obj and obj[key] == value:
-            if key_to_get in obj:
-                return obj[key_to_get]
+        if key in obj and obj[key] == value and key_to_get in obj:
+            return obj[key_to_get]
     return None
 
 
@@ -77,7 +76,7 @@ def get_mash_step(i_brew):
     return None, None
 
 
-def get_value(i_brew, key, default=0):
+def get_value(i_brew, key, default):
     if key in i_brew:
         return i_brew[key]
     else:
@@ -97,7 +96,7 @@ class BFUtil:
     OBJ_NUTRIENT = load_object("yeast_nutrient.json")
     BF_TEMPLATE = load_object("brewfather-batch.json")
 
-    def __init(self):
+    def __init__(self):
         self.batch_number = 1
 
     def convert(self, i_brew):
@@ -123,7 +122,7 @@ class BFUtil:
         notes[2]["timestamp"] = brew_datetime
 
         # Set stats
-        ibu = get_value(i_brew, "batchEstIBU")
+        ibu = get_value(i_brew, "batchEstIBU", 0)
         og = get_actual_og(i_brew)
         bf["estimatedColor"] = i_brew["batchColor"]
         bf["estimatedFg"] = i_brew["batchEstFG"]
@@ -132,13 +131,14 @@ class BFUtil:
         bf["measuredAbv"] = get_actual_abv(i_brew)
         bf["measuredFg"] = get_actual_fg(i_brew)
         bf["measuredOg"] = get_actual_og(i_brew)
+        bf["measuredEfficiency"] = i_brew["batchEfficiency"]
 
         # Recipe
         recipe = bf["recipe"]
         recipe["abv"] = i_brew["batchEstABV"]
         recipe["batchSize"] = gal_to_l(i_brew["batchSize"])
         recipe["boilSize"] = gal_to_l(i_brew["batchBoilSize"])
-        recipe["boilTime"] = get_value(i_brew, "batchBoilTime")
+        recipe["boilTime"] = get_value(i_brew, "batchBoilTime", 0)
         recipe["color"] = i_brew["batchColor"]
         recipe["efficiency"] = i_brew["batchEfficiency"]
         recipe["fgEstimated"] = i_brew["batchEstFG"]
