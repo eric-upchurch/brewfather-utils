@@ -84,6 +84,26 @@ def get_value(i_brew, key, default):
         return default
 
 
+def oz_to_g(oz):
+    return oz * 28.3495
+
+
+def oz_to_kg(oz):
+    return oz_to_g(oz) * 1000
+
+
+def base_malt_type(i_type):
+    if i_type in BFUtil.BASE_MALT_TYPES:
+        return BFUtil.BASE_MALT_TYPES[i_type]
+    return None
+
+
+def grain_type(i_type):
+    if i_type in BFUtil.GRAIN_TYPES:
+        return BFUtil.GRAIN_TYPES[i_type]
+    return i_type
+
+
 class BFUtil:
     OBJ_YEAST = load_object("yeast.json")
     OBJ_FERM = load_object("fermentable.json")
@@ -95,6 +115,19 @@ class BFUtil:
     OBJ_WHIRLFLOC = load_object("whirlfloc.json")
     OBJ_NUTRIENT = load_object("yeast_nutrient.json")
     BF_TEMPLATE = load_object("brewfather-batch.json")
+
+    BASE_MALT_TYPES = dict()
+    BASE_MALT_TYPES["Base - 2 Row"] = "Base"
+    BASE_MALT_TYPES["Base - Munich"] = "Base (Munich)"
+    BASE_MALT_TYPES["Base - Other"] = "Base"
+    BASE_MALT_TYPES["Base - Wheat"] = "Base (Wheat)"
+    BASE_MALT_TYPES["Crystal Malt"] = "Crystal/Caramel"
+    BASE_MALT_TYPES["Roasted / Toasted Malt"] = "Roasted"
+    BASE_MALT_TYPES["N/A"] = None
+
+    GRAIN_TYPES = dict()
+    GRAIN_TYPES["Dry Malt Extract"] = "Dry Extract"
+    GRAIN_TYPES["Liquid Malt Extract"] = "Liquid Extract"
 
     def __init__(self):
         self.batch_number = 1
@@ -120,6 +153,9 @@ class BFUtil:
         notes[0]["timestamp"] = bottling_datetime
         notes[1]["timestamp"] = ferm_datetime
         notes[2]["timestamp"] = brew_datetime
+
+        if "batchNotes" in i_brew and i_brew["batchNotes"] != "":
+            notes[0]["note"] = i_brew["batchNotes"]
 
         # Set stats
         ibu = get_value(i_brew, "batchEstIBU", 0)
@@ -162,8 +198,50 @@ class BFUtil:
             mash["stepTemp"] = f_to_c(mash_temp)
             mash["stepTime"] = mash_time
 
+        if "batchHops" in i_brew:
+            for hop in i_brew["batchHops"]:
+                self.add_hops(bf, hop)
+
+        for fermentable in i_brew["batchGrains"]:
+            self.add_fermentable(bf, fermentable)
+
         self.batch_number += 1
         return bf
+
+    def add_hops(self, bf, hop):
+        bf_hop = copy.deepcopy(BFUtil.OBJ_HOPS)
+
+        bf_hop["alpha"] = hop["bhAlpha"]
+        bf_hop["amount"] = oz_to_g(hop["bhAmount"])
+        bf_hop["name"] = hop["bhName"]
+        bf_hop["origin"] = hop["bhHopOrigin"]
+        bf_hop["time"] = get_value(hop, "bhBoilTime", 0)
+        bf_hop["type"] = hop["bhHopForm"]
+        bf_hop["use"] = hop["bhHopUse"]
+
+        bf["batchHops"].append(bf_hop)
+        bf["recipe"]["hops"].append(bf_hop)
+
+    def add_fermentable(self, bf, fermentable):
+        bf_ferm = copy.deepcopy(BFUtil.OBJ_FERM)
+
+        the_type = grain_type(get_value(fermentable, "bgGrainType", "Sugar"))
+        bf_ferm["amount"] = oz_to_kg(get_value(fermentable, "bgAmount", 0))
+        bf_ferm["color"] = get_value(fermentable, "bgColor", 0)
+        bf_ferm["name"] = fermentable["bgName"]
+        bf_ferm["origin"] = fermentable["bgGrainOrigin"]
+        bf_ferm["potential"] = fermentable["bgSG"]
+        bf_ferm["type"] = the_type
+        if "bgBaseMaltType" in fermentable:
+            bf_ferm["grainCategory"] = base_malt_type(fermentable["bgBaseMaltType"])
+
+        bf["batchFermentables"].append(bf_ferm)
+        bf["recipe"]["fermentables"].append(bf_ferm)
+
+        if the_type == "Sugar" or "Extract" in the_type:
+            bf["recipe"]["data"]["otherFermentables"].append(bf_ferm)
+        else:
+            bf["recipe"]["data"]["mashFermentables"].append(bf_ferm)
 
 
 def main():
