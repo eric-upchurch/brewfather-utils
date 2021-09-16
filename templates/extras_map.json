@@ -1,0 +1,318 @@
+{
+  "Apricot Extract": {
+    "amount": 1,
+    "name": "Apricot Extract",
+    "time": 5,
+    "timeIsDays": true,
+    "type": "Flavor",
+    "unit": "ml",
+    "use": "Bottling"
+  },
+  "Baking Soda": {
+    "_id": "default-2302b0",
+    "amount": 1,
+    "name": "Baking Soda (NaHCO3)",
+    "type": "Water Agent",
+    "unit": "g",
+    "use": "Mash",
+    "waterAdjustment": true
+  },
+  "Bourbon": {
+    "amount": 1,
+    "name": "Bourbon",
+    "time": 5,
+    "timeIsDays": true,
+    "type": "Flavor",
+    "unit": "ml",
+    "use": "Bottling"
+  },
+  "Calcium Chloride": {
+    "_id": "default-3b1827",
+    "amount": 1,
+    "name": "Calcium Chloride (CaCl2)",
+    "type": "Water Agent",
+    "unit": "g",
+    "use": "Mash",
+    "waterAdjustment": true
+  },
+  "Chalk": {
+    "_id": "default-32c2df",
+    "amount": 1,
+    "name": "Chalk (CaCO3)",
+    "type": "Water Agent",
+    "unit": "g",
+    "use": "Mash",
+    "waterAdjustment": true
+  },
+  "Chamomile Flowers": {
+    "amount": 1,
+    "name": "Chamomile Flowers",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Cinnamon Stick": {
+    "_id": "default-1e785a",
+    "amount": 1,
+    "name": "Cinnamon Stick",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Coriander Seed": {
+    "_id": "default-8c2f24",
+    "amount": 1,
+    "name": "Coriander Seed",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Epsom Salt": {
+    "_id": "default-4e9d62",
+    "amount": 1,
+    "name": "Epsom Salt (MgSO4)",
+    "type": "Water Agent",
+    "unit": "g",
+    "use": "Mash",
+    "waterAdjustment": true
+  },
+  "Ginger Root": {
+    "_id": "default-e166b0",
+    "amount": 1,
+    "name": "Ginger Root",
+    "time": 12,
+    "timeIsDays": false,
+    "type": "Herb",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Grapefruit Peel": {
+    "_id": "default-17c781",
+    "amount": 1,
+    "name": "Grapefruit Peel",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Flavor",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Gypsum": {
+    "_id": "default-1f88df",
+    "amount": 1,
+    "name": "Gypsum (CaSO4)",
+    "type": "Water Agent",
+    "unit": "g",
+    "use": "Mash",
+    "waterAdjustment": true
+  },
+  "Hazelnut Flavoring": {
+    "amount": 1,
+    "name": "Hazelnut Flavoring",
+    "time": 7,
+    "timeIsDays": true,
+    "type": "Flavor",
+    "unit": "ml",
+    "use": "Bottling"
+  },
+  "Heather Flowers": {
+    "amount": 1,
+    "name": "Heather Flowers",
+    "time": 10,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Irish Moss": {
+    "_id": "default-5adf6e",
+    "amount": 1,
+    "name": "Irish Moss",
+    "time": 10,
+    "timeIsDays": false,
+    "type": "Fining",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Lactic Acid": {
+    "_id": "default-07adb1",
+    "amount": 1,
+    "name": "Lactic Acid",
+    "type": "Water Agent",
+    "unit": "ml",
+    "use": "Mash",
+    "waterAdjustment": true
+  },
+  "Lemon Peel": {
+    "_id": "default-lemon-peel",
+    "amount": 1,
+    "name": "Lemon Peel",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Flavor",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Nutmeg": {
+    "amount": 1,
+    "name": "Nutmeg",
+    "time": 10,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Oak Chips": {
+    "_id": "default-6c1f22",
+    "amount": 1,
+    "name": "American Oak Cubes, Medium Toast",
+    "time": 7,
+    "timeIsDays": true,
+    "type": "Flavor",
+    "unit": "g",
+    "use": "Secondary"
+  },
+  "Oak Cubes": {
+    "_id": "default-6c1f22",
+    "amount": 1,
+    "name": "American Oak Cubes, Medium Toast",
+    "time": 7,
+    "timeIsDays": true,
+    "type": "Flavor",
+    "unit": "g",
+    "use": "Secondary"
+  },
+  "Oak Spiral": {
+    "_id": "default-6b0ba5",
+    "amount": 1,
+    "name": "American Oak Infusion Spirals",
+    "time": 7,
+    "timeIsDays": true,
+    "type": "Flavor",
+    "unit": "items",
+    "use": "Secondary"
+  },
+  "Orange Peel, Bitter": {
+    "_id": "default-3a51cd",
+    "amount": 1,
+    "name": "Orange Peel, Bitter",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Orange Peel, Sweet": {
+    "_id": "default-ef0d56",
+    "amount": 1,
+    "name": "Orange Peel, Sweet",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Paradise Seeds": {
+    "_id": "default-943de7",
+    "amount": 1,
+    "name": "Paradise Seed",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Peach Extract": {
+    "amount": 1,
+    "name": "Peach Extract",
+    "time": 7,
+    "timeIsDays": true,
+    "type": "Flavor",
+    "unit": "ml",
+    "use": "Bottling"
+  },
+  "Peppercorns, Multicolor": {
+    "amount": 1,
+    "name": "Peppercorns, Multicolor",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Salt": {
+    "_id": "default-bk9j78",
+    "amount": 1,
+    "name": "Canning Salt (NaCl)",
+    "type": "Water Agent",
+    "unit": "g",
+    "use": "Mash",
+    "waterAdjustment": true
+  },
+  "Scotch Whiskey": {
+    "amount": 1,
+    "name": "Scotch Whisky",
+    "time": 5,
+    "timeIsDays": true,
+    "type": "Flavor",
+    "unit": "ml",
+    "use": "Bottling"
+  },
+  "Seeds of Paradise": {
+    "_id": "default-943de7",
+    "amount": 1,
+    "name": "Paradise Seed",
+    "time": 5,
+    "timeIsDays": false,
+    "type": "Spice",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Supermoss": {
+    "_id": "default-aOzf3Xdj9AWQWZD9pV86qkcRSh7Rn2",
+    "_parent": "default-5adf6e",
+    "amount": 0.46,
+    "amountPerL": 0.02,
+    "name": "Supermoss HB Five Star",
+    "substitutes": "Irish Moss",
+    "time": 10,
+    "timeIsDays": false,
+    "type": "Fining",
+    "unit": "g",
+    "use": "Boil"
+  },
+  "Vanilla": {
+    "amount": 1,
+    "name": "Vanilla",
+    "time": 7,
+    "timeIsDays": true,
+    "type": "Flavor",
+    "unit": "ml",
+    "use": "Secondary"
+  },
+  "Whirlfloc Tablet": {
+    "_id": "default-8mv12",
+    "amount": 1,
+    "name": "Whirlfloc",
+    "time": 15,
+    "timeIsDays": false,
+    "type": "Fining",
+    "unit": "items",
+    "use": "Boil"
+  },
+  "Yeast Nutrient": {
+    "_id": "default-yn1j28sf",
+    "amount": 2.2,
+    "name": "Yeast Nutrients",
+    "time": 15,
+    "timeIsDays": false,
+    "type": "Other",
+    "unit": "g",
+    "use": "Boil"
+  }
+}

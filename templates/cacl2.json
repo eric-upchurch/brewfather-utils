@@ -1,9 +1,0 @@
-{
-  "_id": "default-3b1827",
-  "amount": 1,
-  "name": "Calcium Chloride (CaCl2)",
-  "type": "Water Agent",
-  "unit": "g",
-  "use": "Mash",
-  "waterAdjustment": true
-}

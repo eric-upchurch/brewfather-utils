@@ -80,7 +80,7 @@ def get_value(i_brew, key, default):
     if key in i_brew:
         return i_brew[key]
     else:
-        print(f"  - Missing key {key}, returning {default}")
+        print(f"  - Missing key [{key}], returning {default}")
         return default
 
 
@@ -89,7 +89,7 @@ def oz_to_g(oz):
 
 
 def oz_to_kg(oz):
-    return oz_to_g(oz) * 1000
+    return oz_to_g(oz) / 1000
 
 
 def base_malt_type(i_type):
@@ -104,16 +104,15 @@ def grain_type(i_type):
     return i_type
 
 
+def oz_to_ml(oz):
+    return oz * 29.5735
+
+
 class BFUtil:
     OBJ_YEAST = load_object("yeast.json")
     OBJ_FERM = load_object("fermentable.json")
     OBJ_HOPS = load_object("hops.json")
-    OBJ_CACL2 = load_object("cacl2.json")
-    OBJ_CASO4 = load_object("gypsum.json")
-    OBJ_ACID = load_object("lactic_acid.json")
-    OBJ_SUPERMOSS = load_object("supermoss.json")
-    OBJ_WHIRLFLOC = load_object("whirlfloc.json")
-    OBJ_NUTRIENT = load_object("yeast_nutrient.json")
+    EXTRAS_MAP = load_object("extras_map.json")
     BF_TEMPLATE = load_object("brewfather-batch.json")
 
     BASE_MALT_TYPES = dict()
@@ -208,6 +207,10 @@ class BFUtil:
         for yeast in i_brew["batchYeasts"]:
             self.add_yeast(bf, yeast)
 
+        if "batchExtras" in i_brew:
+            for extra in i_brew["batchExtras"]:
+                self.add_extra(bf, extra)
+
         self.batch_number += 1
         return bf
 
@@ -263,6 +266,18 @@ class BFUtil:
         bf["batchYeasts"].append(bf_yeast)
         bf["recipe"]["yeasts"].append(bf_yeast)
 
+    def add_extra(self, bf, extra):
+        name = extra["beName"]
+        if name in BFUtil.EXTRAS_MAP:
+            bf_extra = copy.deepcopy(BFUtil.EXTRAS_MAP[name])
+            if bf_extra["unit"] == "ml":
+                bf_extra["amount"] = oz_to_ml(extra["beAmount"])
+            elif bf_extra["unit"] == "g":
+                bf_extra["amount"] = oz_to_g(extra["beAmount"])
+            bf["batchMiscs"].append(bf_extra)
+            bf["recipe"]["miscs"].append(bf_extra)
+        else:
+            print(f"  - Extra/addition not found: [{name}]")
 
 def main():
     """
@@ -290,7 +305,7 @@ def main():
     directory = "converted"
     os.makedirs(directory, exist_ok=True)
     for batch in batches:
-        with open(f"{directory}/Batch{batch['batchNo']}.json", "w") as file:
+        with open(f"{directory}/Batch{batch['batchNo']:03d}.json", "w") as file:
             json.dump(batch, file, indent=2)
 
     # print(json.dumps(batch))
