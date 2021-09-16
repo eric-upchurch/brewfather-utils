@@ -111,7 +111,10 @@ class BFUtil:
     OBJ_YEAST = load_object("yeast.json")
     OBJ_FERM = load_object("fermentable.json")
     OBJ_HOPS = load_object("hops.json")
+    OBJ_MASH_STEP = load_object("mash-step.json")
     EXTRAS_MAP = load_object("extras_map.json")
+    BF_DEFAULT_MASH = load_object("default-mash.json")
+    BF_EQUIPMENT = load_object("equipment.json")  # TODO Make this a command-line arg for other users
     BF_TEMPLATE = load_object("brewfather-batch.json")
 
     BASE_MALT_TYPES = dict()
@@ -136,6 +139,9 @@ class BFUtil:
 
         bf["batchNo"] = self.batch_number
         print(f"Processing {i_brew['batchName']} as Batch #{self.batch_number}")
+
+        # Set equipment
+        bf["recipe"]["equipment"] = copy.deepcopy(BFUtil.BF_EQUIPMENT)
 
         # Set date/times
         brew_datetime = to_epoch_millis(i_brew["batchBrewDate"])
@@ -184,28 +190,29 @@ class BFUtil:
         recipe["preBoilGravity"] = get_value(i_brew, "batchPreBoilOG", og)
         recipe["type"] = get_value(i_brew, "batchType", "All Grain")
 
+        # Fermentation profile
         if "batchFerms" in i_brew:
             temp = get_by_entry(i_brew["batchFerms"], "bfName", "Primary", "bfTemp")
             if temp is not None:
                 recipe["primaryTemp"] = f_to_c(temp)
 
-        mash_temp, mash_time = get_mash_step(i_brew)
-        if mash_temp is not None:
-            mash = recipe["mash"]["steps"][0]
-            mash["displayStepTemp"] = mash_temp
-            mash["stepTemp"] = f_to_c(mash_temp)
-            mash["stepTime"] = mash_time
+        # Mash profile and name
+        self.populate_mash(bf, i_brew)
 
+        # Hops
         if "batchHops" in i_brew:
             for hop in i_brew["batchHops"]:
                 self.add_hops(bf, hop)
 
+        # Fermentables (grain, sugar, adjuncts)
         for fermentable in i_brew["batchGrains"]:
             self.add_fermentable(bf, fermentable)
 
+        # Yeasts
         for yeast in i_brew["batchYeasts"]:
             self.add_yeast(bf, yeast)
 
+        # Additions (finings, nutrients, spices, flavorings, etc.)
         if "batchExtras" in i_brew:
             for extra in i_brew["batchExtras"]:
                 self.add_extra(bf, extra)
@@ -282,6 +289,45 @@ class BFUtil:
         else:
             print(f"  - Extra/addition not found: [{name}]")
 
+    @staticmethod
+    def add_mash_step(bf, step):
+        bf_step = copy.deepcopy(BFUtil.OBJ_MASH_STEP)
+
+        bf_step["displayStepTemp"] = step["bsStepTemp"]
+        bf_step["name"] = step["bsName"]
+        bf_step["rampTime"] = get_value(step, "bsRiseTime", 0)
+        bf_step["stepTemp"] = f_to_c(step["bsStepTemp"])
+        bf_step["stepTime"] = get_value(step, "bsTime", 0)
+        bf_step["type"] = "Temperature"  # TODO Other types?
+
+        bf["recipe"]["mash"]["steps"].append(bf_step)
+
+    @staticmethod
+    def populate_mash(bf, i_brew):
+        if "batchSteps" in i_brew:
+            for step in i_brew["batchSteps"]:
+                BFUtil.add_mash_step(bf, step)
+        else:
+            bf["recipe"]["mash"] = copy.deepcopy(BFUtil.BF_DEFAULT_MASH)
+            return
+
+        num_steps = len(bf["recipe"]["mash"]["steps"])
+        bf["mashStepsCount"] = num_steps
+        has_mashout = any(step["name"] == "Mash Out" for step in bf["recipe"]["mash"]["steps"])
+
+        mash_name = "Single Infusion"
+        if "batchProfiles" in i_brew and i_brew["batchProfiles"]:
+            mash_name = i_brew["batchProfiles"][0]["bpName"]
+        elif has_mashout:
+            if num_steps == 2:
+                mash_name += ", Mash Out"
+            else:
+                mash_name = "Step Mash, Mash Out"
+        elif num_steps > 1:
+            mash_name = "Step Mash"
+
+        bf["recipe"]["mash"]["name"] = mash_name
+
 
 def main():
     """
@@ -291,7 +337,7 @@ def main():
 
     parser = argparse.ArgumentParser(description="iBrewMaster to Brewfather Converter")
     parser.add_argument("-f", "--file", nargs="+", required=True, type=str, help="Path to .json file(s) to convert")
-    parser.add_argument("-n", "--start-batch-num", required=True, type=int, help="Batch number")
+    parser.add_argument("-n", "--start-batch-num", default=1, type=int, help="Batch number")
 
     args = parser.parse_args()
 

@@ -1,0 +1,22 @@
+{
+  "_id": "default-hf-mo",
+  "name": "High fermentability plus mash out",
+  "steps": [
+    {
+      "displayStepTemp": 152,
+      "name": "",
+      "rampTime": null,
+      "stepTemp": 66.666667,
+      "stepTime": 60,
+      "type": "Temperature"
+    },
+    {
+      "displayStepTemp": 167,
+      "name": "Mash Out",
+      "rampTime": null,
+      "stepTemp": 75,
+      "stepTime": 10,
+      "type": "Temperature"
+    }
+  ]
+}

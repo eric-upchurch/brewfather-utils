@@ -147,60 +147,7 @@
       "weight": "lb"
     },
     "efficiency": 72,
-    "equipment": {
-      "_created": {
-        "nanoseconds": 829000000,
-        "seconds": 1625005449
-      },
-      "_id": "dBzh0cSgBSqbmk4d3HVEzuievzWTag",
-      "_meta": {
-        "efficiencyIsCalculated": true,
-        "mashEfficiencyIsCalculated": true
-      },
-      "_timestamp": {
-        "nanoseconds": 787000000,
-        "seconds": 1625413915
-      },
-      "_timestamp_ms": 1625413915787,
-      "_version": "2.7.6",
-      "altitude": 2194.559997,
-      "altitudeAdjustment": true,
-      "aromaHopUtilization": 0.23,
-      "batchSize": 20.819765,
-      "boilOffPerHr": 6.624471,
-      "boilSize": 29.49,
-      "boilTemp": 92.722222,
-      "boilTime": 60,
-      "bottlingVolume": 18.93,
-      "brewhouseEfficiency": 74.3,
-      "calcAromaHopUtilization": true,
-      "calcBoilVolume": true,
-      "calcMashEfficiency": true,
-      "efficiency": 72,
-      "efficiencyType": "Fermenter",
-      "evaporationRate": 0.22463448626653104,
-      "fermenterLoss": 1.892706,
-      "fermenterLossEstimate": 0,
-      "fermenterVolume": 20.819765,
-      "fermenterVolumeBeforeTopUp": 20.819765,
-      "grainAbsorptionRate": 0.417,
-      "hidden": false,
-      "hopUtilization": 1,
-      "hopstandTemperature": 80,
-      "mashEfficiency": 75.9,
-      "mashTunDeadSpace": 11.356235,
-      "mashTunLoss": null,
-      "mashWaterFormula": "BoilVolumeColdL + (GrainAmountKg * GrainAbsorptionRate) + MashTunLossL",
-      "mashWaterMax": 55.002033,
-      "mashWaterVolumeLimitEnabled": true,
-      "name": "Continuum BrewZilla / RoboBrew 65L",
-      "postBoilKettleVol": 22.870196875,
-      "spargeWaterFormula": "0",
-      "spargeWaterOverflow": "Top-Up",
-      "trubChillerLoss": 1.135624,
-      "waterCalculation": "No Sparge",
-      "waterGrainRatio": 3
-    },
+    "equipment": {},
     "fermentables": [],
     "fermentation": {
       "_id": "default",
@@ -221,26 +168,8 @@
     "ibu": 18,
     "ibuFormula": "tinseth",
     "mash": {
-      "_id": "default-hf-mo",
-      "name": "High fermentability plus mash out",
-      "steps": [
-        {
-          "displayStepTemp": 152,
-          "name": "",
-          "rampTime": null,
-          "stepTemp": 66.666667,
-          "stepTime": 60,
-          "type": "Temperature"
-        },
-        {
-          "displayStepTemp": 167,
-          "name": "Mash Out",
-          "rampTime": null,
-          "stepTemp": 75,
-          "stepTime": 10,
-          "type": "Temperature"
-        }
-      ]
+      "name": "Single Infusion",
+      "steps": []
     },
     "miscs": [],
     "name": "TEST RECIPE",
