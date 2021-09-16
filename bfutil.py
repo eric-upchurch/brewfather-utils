@@ -23,7 +23,6 @@ BF_RECIPE_OTHER_FERM = "otherFermentables"
 def load_object(filename):
     with open("templates/" + filename) as f:
         obj = json.load(f)
-        # print(json.dumps(obj, indent=2))
         return obj
 
 
@@ -214,7 +213,8 @@ class BFUtil:
         self.batch_number += 1
         return bf
 
-    def add_hops(self, bf, hop):
+    @staticmethod
+    def add_hops(bf, hop):
         bf_hop = copy.deepcopy(BFUtil.OBJ_HOPS)
 
         bf_hop["alpha"] = hop["bhAlpha"]
@@ -228,10 +228,11 @@ class BFUtil:
         bf["batchHops"].append(bf_hop)
         bf["recipe"]["hops"].append(bf_hop)
 
-    def add_fermentable(self, bf, fermentable):
+    @staticmethod
+    def add_fermentable(bf, fermentable):
         bf_ferm = copy.deepcopy(BFUtil.OBJ_FERM)
 
-        the_type = grain_type(get_value(fermentable, "bgGrainType", "Sugar")) # don't know, assume Sugar
+        the_type = grain_type(get_value(fermentable, "bgGrainType", "Sugar"))  # don't know, assume Sugar
         bf_ferm["amount"] = oz_to_kg(get_value(fermentable, "bgAmount", 0))
         bf_ferm["color"] = get_value(fermentable, "bgColor", 0)
         bf_ferm["name"] = fermentable["bgName"]
@@ -249,7 +250,8 @@ class BFUtil:
         else:
             bf["recipe"]["data"]["mashFermentables"].append(bf_ferm)
 
-    def add_yeast(self, bf, yeast):
+    @staticmethod
+    def add_yeast(bf, yeast):
         bf_yeast = copy.deepcopy(BFUtil.OBJ_YEAST)
 
         bf_yeast["amount"] = 1  # just use package/vial instead of billion cells
@@ -266,7 +268,8 @@ class BFUtil:
         bf["batchYeasts"].append(bf_yeast)
         bf["recipe"]["yeasts"].append(bf_yeast)
 
-    def add_extra(self, bf, extra):
+    @staticmethod
+    def add_extra(bf, extra):
         name = extra["beName"]
         if name in BFUtil.EXTRAS_MAP:
             bf_extra = copy.deepcopy(BFUtil.EXTRAS_MAP[name])
@@ -279,6 +282,7 @@ class BFUtil:
         else:
             print(f"  - Extra/addition not found: [{name}]")
 
+
 def main():
     """
     Application entry point
@@ -288,6 +292,7 @@ def main():
     parser = argparse.ArgumentParser(description="iBrewMaster to Brewfather Converter")
     parser.add_argument("-f", "--file", nargs="+", required=True, type=str, help="Path to .json file(s) to convert")
     parser.add_argument("-n", "--start-batch-num", required=True, type=int, help="Batch number")
+
     args = parser.parse_args()
 
     util = BFUtil()
