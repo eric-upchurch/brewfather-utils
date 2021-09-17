@@ -5,19 +5,7 @@ import os
 from datetime import date, datetime, time
 
 SIX_HOURS_MILLIS = 6 * 60 * 60 * 1000
-
-BF_BATCH_FERM = "batchFermentables"
-BF_BATCH_HOPS = "batchHops"
-BF_BATCH_MISC = "batchMiscs"
-BF_BATCH_YEAST = "batchYeasts"
-
-BF_RECIPE_FERM = "fermentables"
-BF_RECIPE_HOPS = "hops"
-BF_RECIPE_MISC = "miscs"
-BF_RECIPE_YEAST = "yeasts"
-
-BF_RECIPE_MASH_FERM = "mashFermentables"
-BF_RECIPE_OTHER_FERM = "otherFermentables"
+USE_METRIC = False
 
 
 def load_object(filename):
@@ -32,8 +20,8 @@ def to_epoch_millis(date_str):
     return int(brew_date.timestamp() * 1000)
 
 
-def gal_to_l(gallons):
-    return gallons * 3.78541
+def gal_to_l(volume):
+    return volume if USE_METRIC else volume * 3.78541
 
 
 def get_by_entry(array, key, value, key_to_get):
@@ -44,7 +32,7 @@ def get_by_entry(array, key, value, key_to_get):
 
 
 def f_to_c(temp):
-    return (temp - 32) / 1.8
+    return temp if USE_METRIC else (temp - 32) / 1.8
 
 
 def get_actual_og(i_brew):
@@ -83,12 +71,12 @@ def get_value(i_brew, key, default):
         return default
 
 
-def oz_to_g(oz):
-    return oz * 28.3495
+def oz_to_g(weight):
+    return weight if USE_METRIC else weight * 28.3495
 
 
-def oz_to_kg(oz):
-    return oz_to_g(oz) / 1000
+def oz_to_kg(weight):
+    return weight / 1000 if USE_METRIC else oz_to_g(weight) / 1000
 
 
 def base_malt_type(i_type):
@@ -103,8 +91,8 @@ def grain_type(i_type):
     return i_type
 
 
-def oz_to_ml(oz):
-    return oz * 29.5735
+def oz_to_ml(volume):
+    return volume if USE_METRIC else volume * 29.5735
 
 
 class BFUtil:
@@ -338,8 +326,12 @@ def main():
     parser = argparse.ArgumentParser(description="iBrewMaster to Brewfather Converter")
     parser.add_argument("-f", "--file", nargs="+", required=True, type=str, help="Path to .json file(s) to convert")
     parser.add_argument("-n", "--start-batch-num", default=1, type=int, help="Batch number")
+    parser.add_argument("--metric", action="store_true", default=False,
+                        help="Use SI/metric units instead of US customary/imperial")
 
     args = parser.parse_args()
+    global USE_METRIC
+    USE_METRIC = args.metric
 
     util = BFUtil()
     util.batch_number = args.start_batch_num
@@ -358,8 +350,6 @@ def main():
     for batch in batches:
         with open(f"{directory}/Batch{batch['batchNo']:03d}.json", "w") as file:
             json.dump(batch, file, indent=2)
-
-    # print(json.dumps(batch))
 
 
 if __name__ == '__main__':
