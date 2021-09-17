@@ -1,4 +1,7 @@
-## Intro/Motivation
+## Introduction
+This repo currently has a single utility to convert batches from *iBrewmaster 2* to *Brewfather*.
+
+## Motivation
 
 After over a decade of using *iBrewMaster* (and subsequently *iBrewMaster 2*) for brew tracking, I bought a new iPad and was dismayed to find that the app is not only no longer supported, but no longer available to even install!  
 
