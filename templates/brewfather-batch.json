@@ -182,5 +182,6 @@
     "type": "All Grain",
     "yeasts": []
   },
-  "status": "Completed"
+  "status": "Completed",
+  "tasteRating": null
 }

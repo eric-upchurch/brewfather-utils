@@ -163,6 +163,8 @@ class BFUtil:
         bf["measuredFg"] = get_actual_fg(i_brew)
         bf["measuredOg"] = get_actual_og(i_brew)
         bf["measuredEfficiency"] = i_brew["batchEfficiency"]
+        if "batchRating" in i_brew:
+            bf["tasteRating"] = 10 * i_brew["batchRating"]
 
         # Recipe
         recipe = bf["recipe"]
