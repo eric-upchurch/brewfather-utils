@@ -36,6 +36,8 @@ Please tell me what you want to add to the existing functionality, or if you are
 I welcome all requests for additional functionality, or things I completely screwed up!  The base functionality is based on my backup and current (very limited) *Brewfather* experience, so I am positive there are things I missed!
 
 ## Limitations
-Equipment is currently assigned to my personal equipment.  If you want a different equipment setup (which you likely will), you can replace the contents of the `templates/equipment.json` with your equipment profile from a Brewfather export.
+Equipment is currently assigned to my personal equipment.  If you want a different equipment setup (which you likely will), you can replace the contents of the `templates/equipment.json` with your equipment profile from a *Brewfather* export.
+
+Beer styles are not configured during the conversion process (primarily because *iBrewmaster 2* used 2008 BJCP guidelines, whilst *Brewfather* uses 2015).  I recommend editing the batch recipe through *Brewfather* after import to set to the style you expect.
 
 Because I live in the US, I have not tested the `--metric` option, other than making sure it does not convert most units from the backup files.  If you use this, please check that the resulting units are what you expect.  In particular, *Brewfather* uses grams almost everywhere except for malt/fermentable measurements, in which it uses kg.  Because *iBrewmaster 2* stored US/imperial weights in oz, I made the assumption that it would use grams instead of kg for mass/weight.  This assumption may be incorrect (please let me know if it is!).
