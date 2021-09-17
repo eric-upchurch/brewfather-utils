@@ -120,6 +120,7 @@ class BFUtil:
 
     def __init__(self):
         self.batch_number = 1
+        self.brewer = "Brewer"
 
     def convert(self, i_brew):
         # Copy the Brewfather template
@@ -128,8 +129,10 @@ class BFUtil:
         bf["batchNo"] = self.batch_number
         print(f"Processing {i_brew['batchName']} as Batch #{self.batch_number}")
 
-        # Set equipment
+        # Set equipment and brewer
         bf["recipe"]["equipment"] = copy.deepcopy(BFUtil.BF_EQUIPMENT)
+        bf["brewer"] = self.brewer
+        bf["recipe"]["author"] = self.brewer
 
         # Set date/times
         brew_datetime = to_epoch_millis(i_brew["batchBrewDate"])
@@ -325,7 +328,8 @@ def main():
 
     parser = argparse.ArgumentParser(description="iBrewMaster to Brewfather Converter")
     parser.add_argument("-f", "--file", nargs="+", required=True, type=str, help="Path to .json file(s) to convert")
-    parser.add_argument("-n", "--start-batch-num", default=1, type=int, help="Batch number")
+    parser.add_argument("--brewer", type=str, required=True, help="Brewer name")
+    parser.add_argument("-n", "--start-batch-num", default=1, type=int, help="Starting batch number")
     parser.add_argument("--metric", action="store_true", default=False,
                         help="Use SI/metric units instead of US customary/imperial")
 
@@ -335,6 +339,7 @@ def main():
 
     util = BFUtil()
     util.batch_number = args.start_batch_num
+    util.brewer = args.brewer
     batches = []
     for filename in args.file:
         with open(filename) as file:

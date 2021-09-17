@@ -15,7 +15,7 @@
   "bottlingDateSet": true,
   "brewControllerEnabled": false,
   "brewDate": 1631624066440,
-  "brewer": "Eric Upchurch",
+  "brewer": "Brewer",
   "carbonationForce": 10.8,
   "carbonationType": "Keg (Force)",
   "cost": {
@@ -119,7 +119,7 @@
   "recipe": {
     "_type": "recipe",
     "abv": 6.83,
-    "author": "Eric Upchurch",
+    "author": "Brewer",
     "avgWeightedHopstandTemp": 80,
     "batchSize": 20.819765,
     "boilSize": 29.49,

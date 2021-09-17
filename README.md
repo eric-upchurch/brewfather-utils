@@ -24,7 +24,7 @@ To convert from *iBrewMaster 2* to *Brewfather* batches, you will need your back
 ## Application Usage
 To see usage, run `python bfutil.py --help`.
 
-To convert batches, run the following: `python bfutil.py --file <files>`, where `<files>` is the list of *iBrewmaster 2* backup JSON files you wish to convert.
+To convert batches, run the following: `python bfutil.py --brewer "<name>" --file <files>`, where `"<name>"` is your name (or your brewery name), and `<files>` is the list of *iBrewmaster 2* backup JSON files you wish to convert.
 
 This will create converted batches starting at batch #1 in the `converted/` directory.  If you want to start from a different batch number, add the `--start-batch-num N` option, where `N` is the starting batch number.
 
