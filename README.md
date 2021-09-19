@@ -1,5 +1,5 @@
 ## Introduction
-This repo currently has a single utility to convert batches from *iBrewmaster 2* to *Brewfather*.
+This repo currently has a single utility to convert batches from *iBrewMaster 2* to *Brewfather*.
 
 ## Motivation
 
@@ -22,16 +22,18 @@ Keep calm, brew on!!!
 ## Requirements
 This repo uses Python 3, because it was the language that I was playing with at the time.  There are no external dependencies, so you don't need to use a virtual environment or download any additional packages...
 
-To convert from *iBrewMaster 2* to *Brewfather* batches, you will need your backups from *iBrewmaster 2* in JSON format.  Your backups can have any number of batches per file, and you can process all of your backup files in a single call.  I attempted to place them all in a single file for *Brewfather* to import, but was unsuccessful, so you will need to import each batch individually, one at a time :(.  I suggest sampling your previous batches to make sure they are not infected whilst you do this.
+To convert from *iBrewMaster 2* to *Brewfather* batches, you will need your backups from *iBrewMaster 2* in JSON format.  Your backups can have any number of batches per file, and you can process all of your backup files in a single call.  I attempted to place them all in a single file for *Brewfather* to import, but was unsuccessful, so you will need to import each batch individually, one at a time :(.  I suggest sampling your previous batches to make sure they are not infected whilst you do this.
+
+The conversion of your *iBrewMaster 2* JSON files will create a single file for each batch.  To import these into *Brewfather*, you will need to go to the **Recipes** section in *Brewfather*, and click the **Import** (![Import](assets/import.png)) button at the top right of the page.  When prompted, choose **Brewfather JSON** as the import format, and next **IMPORT AS BATCH** to import the file as a batch (as opposed to just a recipe).
 
 ## Application Usage
 To see usage, run `python bfutil.py --help`.
 
-To convert batches, run the following: `python bfutil.py --brewer "<name>" --file <files>`, where `"<name>"` is your name (or your brewery name), and `<files>` is the list of *iBrewmaster 2* backup JSON files you wish to convert.
+To convert batches, run the following: `python bfutil.py --brewer "<name>" --file <files>`, where `"<name>"` is your name (or your brewery name), and `<files>` is the list of *iBrewMaster 2* backup JSON files you wish to convert.
 
 This will create converted batches starting at batch #1 in the `converted/` directory.  If you want to start from a different batch number, add the `--start-batch-num N` option, where `N` is the starting batch number.
 
-By default, the application expects units in the *iBrewmaster 2* JSON backup files to be in US customary/imperial units (e.g. oz, gallons, etc.).  These are subsequently converted to SI/metric units by the application.  If your backups are already in SI/metric units, then pass the `--metric` option to the application.
+By default, the application expects units in the *iBrewMaster 2* JSON backup files to be in US customary/imperial units (e.g. oz, gallons, etc.).  These are subsequently converted to SI/metric units by the application.  If your backups are already in SI/metric units, then pass the `--metric` option to the application.
 ## Feedback
 
 Please tell me what you want to add to the existing functionality, or if you are a developer, please submit pull requests to update!
@@ -41,6 +43,6 @@ I welcome all requests for additional functionality, or things I completely scre
 ## Limitations
 Equipment is currently assigned to my personal equipment.  If you want a different equipment setup (which you likely will), you can replace the contents of the `templates/equipment.json` with your equipment profile from a *Brewfather* export.
 
-Beer styles are not configured during the conversion process (primarily because *iBrewmaster 2* used 2008 BJCP guidelines, whilst *Brewfather* uses 2015).  I recommend editing the batch recipe through *Brewfather* after import to set to the style you expect.
+Beer styles are not configured during the conversion process (primarily because *iBrewMaster 2* used 2008 BJCP guidelines, whilst *Brewfather* uses 2015).  I recommend editing the batch recipe through *Brewfather* after import to set to the style you expect.
 
-Because I live in the US, I have not tested the `--metric` option, other than making sure it does not convert most units from the backup files.  If you use this, please check that the resulting units are what you expect.  In particular, *Brewfather* uses grams almost everywhere except for malt/fermentable measurements, in which it uses kg.  Because *iBrewmaster 2* stored US/imperial weights in oz, I made the assumption that it would use grams instead of kg for mass/weight.  This assumption may be incorrect (please let me know if it is!).
+Because I live in the US, I have not tested the `--metric` option, other than making sure it does not convert most units from the backup files.  If you use this, please check that the resulting units are what you expect.  In particular, *Brewfather* uses grams almost everywhere except for malt/fermentable measurements, in which it uses kg.  Because *iBrewMaster 2* stored US/imperial weights in oz, I made the assumption that it would use grams instead of kg for mass/weight.  This assumption may be incorrect (please let me know if it is!).
