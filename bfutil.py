@@ -372,6 +372,14 @@ def main():
 
     directory = "converted"
     os.makedirs(directory, exist_ok=True)
+    all_batches = load_object("brewfather-import.json")
+    all_batches["_timestamp"] = datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+    all_batches["user"]["name"] = util.brewer
+    all_batches["data"]["batches"] = batches
+
+    with open(f"{directory}/All_Batches.json", "w") as file:
+        json.dump(all_batches, file, indent=2)
+
     for batch in batches:
         with open(f"{directory}/Batch{batch['batchNo']:03d}.json", "w") as file:
             json.dump(batch, file, indent=2)

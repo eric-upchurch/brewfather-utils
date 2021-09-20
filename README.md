@@ -22,18 +22,19 @@ Keep calm, brew on!!!
 ## Requirements
 This repo uses Python 3, because it was the language that I was playing with at the time.  There are no external dependencies, so you don't need to use a virtual environment or download any additional packages...
 
-To convert from *iBrewMaster 2* to *Brewfather* batches, you will need your backups from *iBrewMaster 2* in JSON format.  Your backups can have any number of batches per file, and you can process all of your backup files in a single call.  I attempted to place them all in a single file for *Brewfather* to import, but was unsuccessful, so you will need to import each batch individually, one at a time :(.  I suggest sampling your previous batches to make sure they are not infected whilst you do this.
-
-The conversion of your *iBrewMaster 2* JSON files will create a single file for each batch.  To import these into *Brewfather*, you will need to go to the **Recipes** section in *Brewfather*, and click the **Import** (![Import](assets/import.png)) button at the top right of the page.  When prompted, choose **Brewfather JSON** as the import format, and next **IMPORT AS BATCH** to import the file as a batch (as opposed to just a recipe).
+To convert from *iBrewMaster 2* to *Brewfather* batches, you will need your backups from *iBrewMaster 2* in JSON format.  Your backups can have any number of batches per file, and you can process all of your backup files in a single call.
 
 ## Application Usage
 To see usage, run `python bfutil.py --help`.
 
 To convert batches, run the following: `python bfutil.py --brewer "<name>" --file <files>`, where `"<name>"` is your name (or your brewery name), and `<files>` is the list of *iBrewMaster 2* backup JSON files you wish to convert.
 
-This will create converted batches starting at batch #1 in the `converted/` directory.  If you want to start from a different batch number, add the `--start-batch-num N` option, where `N` is the starting batch number.
+This will create converted batches starting at Batch #1 in the `converted/` directory, as well as a *Brewfather* import file containing all batches named `All_Batches.json`.  If you want to start from a different batch number, add the `--start-batch-num N` option, where `N` is the starting batch number.
 
 By default, the application expects units in the *iBrewMaster 2* JSON backup files to be in US customary/imperial units (e.g. oz, gallons, etc.).  These are subsequently converted to SI/metric units by the application.  If your backups are already in SI/metric units, then pass the `--metric` option to the application.
+
+To import the resulting JSON files into *Brewfather*, you will need to go to the **Recipes** section in *Brewfather*, and click the **Import** (![Import](assets/import.png)) button at the top right of the page.  When prompted, choose **Brewfather JSON** as the import format.  If importing a single Batch file, choose **IMPORT AS BATCH** at the next prompt to import the file as a batch (as opposed to just a recipe).  If importing the `All_Batches.json` file, you will receive a single prompt to import all Batches.
+
 ## Feedback
 
 Please tell me what you want to add to the existing functionality, or if you are a developer, please submit pull requests to update!

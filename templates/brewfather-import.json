@@ -1,0 +1,27 @@
+{
+  "_type": "Brewfather_Export_User_1",
+  "_timestamp": "2021-09-09T15:29:43.800Z",
+  "_url": "https://web.brewfather.app",
+  "user": {
+    "id": "",
+    "email": "",
+    "name": "Brewer"
+  },
+  "settings": {},
+  "data": {
+    "recipes": [],
+    "batches": [],
+    "profiles": {
+      "equipment": [],
+      "fermentation": [],
+      "mash": [],
+      "water": []
+    },
+    "inventory": {
+      "fermentables": [],
+      "hops": [],
+      "miscs": [],
+      "yeasts": []
+    }
+  }
+}
