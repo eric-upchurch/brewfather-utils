@@ -29,11 +29,11 @@ To see usage, run `python bfutil.py --help`.
 
 To convert batches, run the following: `python bfutil.py --brewer "<name>" --file <files>`, where `"<name>"` is your name (or your brewery name), and `<files>` is the list of *iBrewMaster 2* backup JSON files you wish to convert.
 
-This will create converted batches starting at Batch #1 in the `converted/` directory, as well as a *Brewfather* import file containing all batches named `All_Batches.json`.  If you want to start from a different batch number, add the `--start-batch-num N` option, where `N` is the starting batch number.
+This will create converted batches starting at Batch #1 in the `converted/` directory.  If you want to start from a different batch number, add the `--start-batch-num N` option, where `N` is the starting batch number.
 
 By default, the application expects units in the *iBrewMaster 2* JSON backup files to be in US customary/imperial units (e.g. oz, gallons, etc.).  These are subsequently converted to SI/metric units by the application.  If your backups are already in SI/metric units, then pass the `--metric` option to the application.
 
-To import the resulting JSON files into *Brewfather*, you will need to go to the **Recipes** section in *Brewfather*, and click the **Import** (![Import](assets/import.png)) button at the top right of the page.  When prompted, choose **Brewfather JSON** as the import format.  If importing a single Batch file, choose **IMPORT AS BATCH** at the next prompt to import the file as a batch (as opposed to just a recipe).  If importing the `All_Batches.json` file, you will receive a single prompt to import all Batches.
+To import the resulting JSON files into *Brewfather*, you will need to go to the **Recipes** section in *Brewfather*, and click the **Import** (![Import](assets/import.png)) button at the top right of the page.  When prompted, choose **Brewfather JSON** as the import format, and then **IMPORT AS BATCH** at the next prompt to import the file as a batch (as opposed to just a recipe).
 
 ## Feedback
 
@@ -42,6 +42,8 @@ Please tell me what you want to add to the existing functionality, or if you are
 I welcome all requests for additional functionality, or things I completely screwed up!  The base functionality is based on my backup and current (very limited) *Brewfather* experience, so I am positive there are things I missed!
 
 ## Limitations
+*Brewfather* JSON batch files are currently generated as one batch per file, which also means you need to import them one-by-one.  I experimented with generating all batches to a single file, and while *Brewfather* recognized the file and began the import, it did not actually generate any batches within the application, and gave no errors to try and diagnose the problem :(.
+
 Equipment is currently assigned to my personal equipment.  If you want a different equipment setup (which you likely will), you can replace the contents of the `templates/equipment.json` with your equipment profile from a *Brewfather* export.
 
 Beer styles are not configured during the conversion process (primarily because *iBrewMaster 2* used 2008 BJCP guidelines, whilst *Brewfather* uses 2015).  I recommend editing the batch recipe through *Brewfather* after import to set to the style you expect.
