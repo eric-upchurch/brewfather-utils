@@ -275,12 +275,26 @@ class BFUtil:
     @staticmethod
     def add_extra(bf, extra):
         name = extra["beName"]
+        batch_size = bf["recipe"]["batchSize"]
         if name in BFUtil.EXTRAS_MAP:
             bf_extra = copy.deepcopy(BFUtil.EXTRAS_MAP[name])
-            if bf_extra["unit"] == "ml":
-                bf_extra["amount"] = oz_to_ml(extra["beAmount"])
-            elif bf_extra["unit"] == "g":
-                bf_extra["amount"] = oz_to_g(extra["beAmount"])
+            # Units for additions can be all over the place.  In general, mash additions are measured in g even when
+            # using US/imperial units.  So, guesstimate based on the actual amount...
+            amount = extra["beAmount"]
+            if bf_extra["use"] == "Mash":
+                # Don't convert, just assume it is SI/metric
+                pass
+            elif name == "Yeast Nutrient":
+                amount = 0.116235451 * batch_size  # typical dosing
+            elif name in ["Supermoss", "Irish Moss"]:
+                amount = 0.02 * batch_size  # typical dosing
+            else:
+                # Flavorings, etc, go ahead and convert
+                if bf_extra["unit"] == "ml":
+                    amount = oz_to_ml(amount)
+                elif bf_extra["unit"] == "g":
+                    amount = oz_to_g(amount)
+            bf_extra["amount"] = round(amount, 3)
             bf["batchMiscs"].append(bf_extra)
             bf["recipe"]["miscs"].append(bf_extra)
         else:
