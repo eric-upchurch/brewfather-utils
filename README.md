@@ -46,3 +46,8 @@ Equipment is currently assigned to my personal equipment.  If you want a differe
 Beer styles are not configured during the conversion process (primarily because *iBrewMaster 2* used 2008 BJCP guidelines, whilst *Brewfather* uses 2015).  I recommend editing the batch recipe through *Brewfather* after import to set to the style you expect.
 
 Because I live in the US, I have not tested the `--metric` option, other than making sure it does not convert most units from the backup files.  If you use this, please check that the resulting units are what you expect.  In particular, *Brewfather* uses grams almost everywhere except for malt/fermentable measurements, in which it uses kg.  Because *iBrewMaster 2* stored US/imperial weights in oz, I made the assumption that it would use grams instead of kg for mass/weight.  This assumption may be incorrect (please let me know if it is!).
+
+Measurements for additions/extras (e.g. water agents, spices, flavorings, etc.) may be off, depending upon the units you used in *iBrewMaster 2*.  Unfortunately, the units are not included in the JSON, so I basically have to guess when converting.  I made a few basic assumptions:
+ - Any mash additions are assumed to be in grams, regardless of measurement system used.  So, the amounts will not be converted (this includes any addition with "Mash" as the use for *Brewfather*)
+ - Yeast Nutrient, Irish Moss, and Supermoss amounts are calculated in grams based on batch size, ignoring the amount in *iBrewMaster 2*
+ - All other additions that are measured in either grams or ml in *Brewfather* are converted from oz or floz if not using the `--metric` option.  See the file `templates/extras_map.json` for details. 
