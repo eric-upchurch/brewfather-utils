@@ -167,10 +167,12 @@ class BFUtil:
             bf["tasteRating"] = 10 * i_brew["batchRating"]
 
         # Recipe
+        batch_size = gal_to_l(i_brew["batchSize"])
+        boil_size = gal_to_l(i_brew["batchBoilSize"])
         recipe = bf["recipe"]
         recipe["abv"] = i_brew["batchEstABV"]
-        recipe["batchSize"] = gal_to_l(i_brew["batchSize"])
-        recipe["boilSize"] = gal_to_l(i_brew["batchBoilSize"])
+        recipe["batchSize"] = batch_size
+        recipe["boilSize"] = boil_size
         recipe["boilTime"] = get_value(i_brew, "batchBoilTime", 0)
         recipe["color"] = i_brew["batchColor"]
         recipe["efficiency"] = i_brew["batchEfficiency"]
@@ -182,6 +184,8 @@ class BFUtil:
         recipe["postBoilGravity"] = i_brew["batchEstOG"]
         recipe["preBoilGravity"] = get_value(i_brew, "batchPreBoilOG", og)
         recipe["type"] = get_value(i_brew, "batchType", "All Grain")
+        recipe["equipment"]["batchSize"] = batch_size
+        recipe["equipment"]["boilSize"] = boil_size
 
         # Fermentation profile
         if "batchFerms" in i_brew:
