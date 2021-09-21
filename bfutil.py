@@ -286,8 +286,10 @@ class BFUtil:
                 pass
             elif name == "Yeast Nutrient":
                 amount = 0.116235451 * batch_size  # typical dosing
-            elif name in ["Supermoss", "Irish Moss"]:
-                amount = 0.02 * batch_size  # typical dosing
+            elif name == "Supermoss":
+                amount = 0.0475 * batch_size  # typical dosing
+            elif name == "Irish Moss":
+                amount = 0.2 * batch_size  # typical dosing
             else:
                 # Flavorings, etc, go ahead and convert
                 if bf_extra["unit"] == "ml":
@@ -375,13 +377,13 @@ def main():
 
     # Import of the All_Batches.json file into Brewfather currently does not work.  It will display the prompt to
     # import, with the correct number of batches, do the import, but not
-    # all_batches = load_object("brewfather-import.json")
-    # all_batches["_timestamp"] = datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
-    # all_batches["user"]["name"] = util.brewer
-    # all_batches["data"]["batches"] = batches
-    #
-    # with open(f"{directory}/All_Batches.json", "w") as file:
-    #     json.dump(all_batches, file, indent=2)
+    all_batches = load_object("brewfather-import.json")
+    all_batches["_timestamp"] = datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+    all_batches["user"]["name"] = util.brewer
+    all_batches["data"]["batches"] = batches
+
+    with open(f"{directory}/All_Batches.json", "w") as file:
+        json.dump(all_batches, file, indent=2)
 
     for batch in batches:
         with open(f"{directory}/Batch{batch['batchNo']:03d}.json", "w") as file:
