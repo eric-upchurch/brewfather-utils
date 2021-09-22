@@ -25,7 +25,9 @@ This repo uses Python 3, because it was the language that I was playing with at 
 To convert from *iBrewMaster 2* to *Brewfather* batches, you will need your backups from *iBrewMaster 2* in JSON format.  Your backups can have any number of batches per file, and you can process all of your backup files in a single call.
 
 ## Application Usage
-To see usage, run `python bfutil.py --help`.
+**NOTE: Before you run the application, please see the *Limitations* section for some additional setup!!!**
+
+To see usage, run `python bfutil.py --help`.  
 
 To convert batches, run the following: `python bfutil.py --brewer "<name>" --file <files>`, where `"<name>"` is your name (or your brewery name), and `<files>` is the list of *iBrewMaster 2* backup JSON files you wish to convert.
 
@@ -50,7 +52,4 @@ Beer styles are not configured during the conversion process (primarily because 
 
 Because I live in the US, I have not tested the `--metric` option, other than making sure it does not convert most units from the backup files.  If you use this, please check that the resulting units are what you expect.  In particular, *Brewfather* uses grams almost everywhere except for malt/fermentable measurements, in which it uses kg.  Because *iBrewMaster 2* stored US/imperial weights in oz, I made the assumption that it would use grams instead of kg for mass/weight.  This assumption may be incorrect (please let me know if it is!).
 
-Measurements for additions/extras (e.g. water agents, spices, flavorings, etc.) may be off, depending upon the units you used in *iBrewMaster 2*.  Unfortunately, the units are not included in the JSON, so I basically have to guess when converting.  I made a few basic assumptions:
- - Any mash additions are assumed to be in grams, regardless of measurement system used.  So, the amounts will not be converted (this includes any addition with "Mash" as the use for *Brewfather*)
- - Yeast Nutrient, Irish Moss, and Supermoss amounts are calculated in grams based on batch size, ignoring the amount in *iBrewMaster 2*
- - All other additions that are measured in either grams or ml in *Brewfather* are converted from oz or floz if not using the `--metric` option.  See the file `templates/extras_map.json` for details. 
+Measurements for additions/extras (e.g. water agents, spices, flavorings, etc.) are NOT converted in any way.  *iBrewMaster 2* does not store the units, and thus measurements can be all over the place (e.g. I use grams for mash additions, but oz for some other additions, tsp for finings, etc.).  I initially experimented with this based on the addition, but finally gave up as it got too complex, even for my one use case.  Instead, the app uses a mapping file, `templates/extras_map.json`, in which you can change the units and add new additions/extras.  After running an initial conversion, note any missing additions, and add them to the mapping file as needed.

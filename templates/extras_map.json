@@ -5,7 +5,7 @@
     "time": 5,
     "timeIsDays": true,
     "type": "Flavor",
-    "unit": "ml",
+    "unit": "oz",
     "use": "Bottling"
   },
   "Baking Soda": {
@@ -23,7 +23,7 @@
     "time": 5,
     "timeIsDays": true,
     "type": "Flavor",
-    "unit": "ml",
+    "unit": "oz",
     "use": "Bottling"
   },
   "Calcium Chloride": {
@@ -60,7 +60,7 @@
     "time": 5,
     "timeIsDays": false,
     "type": "Spice",
-    "unit": "g",
+    "unit": "items",
     "use": "Boil"
   },
   "Coriander Seed": {
@@ -70,7 +70,7 @@
     "time": 5,
     "timeIsDays": false,
     "type": "Spice",
-    "unit": "g",
+    "unit": "oz",
     "use": "Boil"
   },
   "Epsom Salt": {
@@ -89,7 +89,7 @@
     "time": 12,
     "timeIsDays": false,
     "type": "Herb",
-    "unit": "g",
+    "unit": "oz",
     "use": "Boil"
   },
   "Grapefruit Peel": {
@@ -99,7 +99,7 @@
     "time": 5,
     "timeIsDays": false,
     "type": "Flavor",
-    "unit": "g",
+    "unit": "oz",
     "use": "Boil"
   },
   "Gypsum": {
@@ -117,7 +117,7 @@
     "time": 7,
     "timeIsDays": true,
     "type": "Flavor",
-    "unit": "ml",
+    "unit": "oz",
     "use": "Bottling"
   },
   "Heather Flowers": {
@@ -126,7 +126,7 @@
     "time": 10,
     "timeIsDays": false,
     "type": "Spice",
-    "unit": "g",
+    "unit": "oz",
     "use": "Boil"
   },
   "Irish Moss": {
@@ -136,7 +136,7 @@
     "time": 10,
     "timeIsDays": false,
     "type": "Fining",
-    "unit": "g",
+    "unit": "tsp",
     "use": "Boil"
   },
   "Lactic Acid": {
@@ -155,7 +155,7 @@
     "time": 5,
     "timeIsDays": false,
     "type": "Flavor",
-    "unit": "g",
+    "unit": "oz",
     "use": "Boil"
   },
   "Nutmeg": {
@@ -164,7 +164,7 @@
     "time": 10,
     "timeIsDays": false,
     "type": "Spice",
-    "unit": "g",
+    "unit": "tsp",
     "use": "Boil"
   },
   "Oak Chips": {
@@ -174,7 +174,7 @@
     "time": 7,
     "timeIsDays": true,
     "type": "Flavor",
-    "unit": "g",
+    "unit": "oz",
     "use": "Secondary"
   },
   "Oak Cubes": {
@@ -184,7 +184,7 @@
     "time": 7,
     "timeIsDays": true,
     "type": "Flavor",
-    "unit": "g",
+    "unit": "oz",
     "use": "Secondary"
   },
   "Oak Spiral": {
@@ -204,7 +204,7 @@
     "time": 5,
     "timeIsDays": false,
     "type": "Spice",
-    "unit": "g",
+    "unit": "oz",
     "use": "Boil"
   },
   "Orange Peel, Sweet": {
@@ -214,7 +214,7 @@
     "time": 5,
     "timeIsDays": false,
     "type": "Spice",
-    "unit": "g",
+    "unit": "oz",
     "use": "Boil"
   },
   "Paradise Seeds": {
@@ -233,7 +233,7 @@
     "time": 7,
     "timeIsDays": true,
     "type": "Flavor",
-    "unit": "ml",
+    "unit": "oz",
     "use": "Bottling"
   },
   "Peppercorns, Multicolor": {
@@ -242,7 +242,7 @@
     "time": 5,
     "timeIsDays": false,
     "type": "Spice",
-    "unit": "g",
+    "unit": "oz",
     "use": "Boil"
   },
   "Salt": {
@@ -260,7 +260,7 @@
     "time": 5,
     "timeIsDays": true,
     "type": "Flavor",
-    "unit": "ml",
+    "unit": "oz",
     "use": "Bottling"
   },
   "Seeds of Paradise": {
@@ -283,7 +283,7 @@
     "time": 10,
     "timeIsDays": false,
     "type": "Fining",
-    "unit": "g",
+    "unit": "tsp",
     "use": "Boil"
   },
   "Vanilla": {
@@ -292,7 +292,7 @@
     "time": 7,
     "timeIsDays": true,
     "type": "Flavor",
-    "unit": "ml",
+    "unit": "oz",
     "use": "Secondary"
   },
   "Whirlfloc Tablet": {
@@ -312,7 +312,7 @@
     "time": 15,
     "timeIsDays": false,
     "type": "Other",
-    "unit": "g",
+    "unit": "tsp",
     "use": "Boil"
   }
 }
